@@ -1,0 +1,96 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/astro/Breadcrumbs.astro';
+import FaqBlock from '../../components/astro/FaqBlock.astro';
+import RelatedLinks from '../../components/astro/RelatedLinks.astro';
+import MonthGrid from '../../components/astro/MonthGrid.astro';
+import StaticMap from '../../components/StaticMap';
+import { ScoreLegend } from '../../components/ClimateStrip';
+import { ALL_MONTHS, MONTH_NAMES, monthName, scoreZones, type Month } from '../../engine';
+import { climate, dataset } from '../../lib/data';
+import { DURATIONS, paths } from '../../lib/slugs';
+import { bestMonthsFor, monthRange } from '../../lib/content';
+import { breadcrumbs, faqPage } from '../../lib/jsonld';
+import { SCORE_COLOR, SCORE_LABEL } from '../../components/colors';
+
+const jan = scoreZones(1, climate).scores;
+const jul = scoreZones(7, climate).scores;
+const crumbs = [{ name: 'Home', path: '/' }, { name: 'Best time to visit', path: '/when' }];
+const faq = [
+  { q: 'What is the best month to visit Sri Lanka?', a: 'February and March are the best all-round months: the south, west, hill country and Cultural Triangle are all dry, and the east coast is drying out. For the east coast and the north, go between May and September.' },
+  { q: 'When is monsoon season in Sri Lanka?', a: 'There are two. The southwest monsoon (Yala) brings rain to the south and west coasts and the western hills from May to September. The northeast monsoon (Maha) brings rain to the north and east from roughly October to January. October and November also get heavy inter-monsoon storms island-wide.' },
+  { q: 'Can I visit Sri Lanka during monsoon?', a: 'Yes. Because the monsoons hit opposite coasts, one side of the island is almost always dry. A monsoon-aware route moves you to the dry side; the planner does this automatically.' },
+  { q: 'When is whale-watching season?', a: 'Off Mirissa on the south coast from November to April (best December to March). Off Trincomalee on the east coast from about March to August.' },
+];
+---
+<Base
+  title="Best Time to Visit Sri Lanka: Month-by-Month Weather Map"
+  description="Sri Lanka has two monsoons on opposite coasts. See which regions are dry each month, why, and a route that avoids the rain."
+  path="/when"
+  jsonld={[breadcrumbs(crumbs), faqPage(faq)]}
+>
+  <Breadcrumbs items={crumbs} />
+  <h1 class="text-3xl sm:text-4xl font-semibold">Best time to visit Sri Lanka</h1>
+  <p class="mt-3 text-lg text-ink/80">The short answer: <strong>December to March for the south and west, May to September for the east and north.</strong> The Cultural Triangle in between is good for most of the year. Here's why, and what that means for your month.</p>
+
+  <section class="mt-8 prose-body" aria-labelledby="monsoons">
+    <h2 id="monsoons">The two-monsoon island</h2>
+    <p>Sri Lanka sits in the path of two seasonal winds blowing in opposite directions. The central mountains split them, so whichever side of the island the wind hits gets the rain. The other side stays in a rain shadow and is mostly dry.</p>
+    <div class="not-prose grid grid-cols-2 gap-4 my-6">
+      <figure class="rounded-2xl border border-line bg-white p-3 text-center">
+        <StaticMap zones={climate} scores={jan} width={220} className="mx-auto h-64 w-auto" title="Sri Lanka in January" />
+        <figcaption class="text-sm mt-1"><strong>January</strong>: northeast monsoon. South and west dry.</figcaption>
+      </figure>
+      <figure class="rounded-2xl border border-line bg-white p-3 text-center">
+        <StaticMap zones={climate} scores={jul} width={220} className="mx-auto h-64 w-auto" title="Sri Lanka in July" />
+        <figcaption class="text-sm mt-1"><strong>July</strong>: southwest monsoon. East and north dry.</figcaption>
+      </figure>
+    </div>
+    <p><strong>The southwest monsoon (locally called Yala), May to September,</strong> blows in off the Indian Ocean and dumps its rain on the west coast, the south coast and the western slopes of the hill country. Colombo, Galle, Mirissa and Nuwara Eliya are wet; seas on the south coast are rough and many beaches fly red flags. Meanwhile the east coast (Trincomalee, Arugam Bay, Pasikuda) and the north (Jaffna) are in their dry, sunny peak.</p>
+    <p><strong>The northeast monsoon (Maha), roughly October/November to January,</strong> reverses the pattern. It soaks the north and east, while the south and west move into their high season from December.</p>
+    <p><strong>The inter-monsoon months</strong> are the transition periods. October and November bring heavy afternoon thunderstorms almost everywhere; April brings hot, humid days and some storms. These are the hardest months to plan, but also the quietest and cheapest.</p>
+    <p><strong>The Cultural Triangle</strong> (Sigiriya, Dambulla, Polonnaruwa, Anuradhapura, Kandy) sits in the dry zone and gets most of its rain from the northeast monsoon. It is good from January to September, and wettest from October to December.</p>
+    <p><strong>The hill country</strong> is the exception to every rule: misty, cool and showery at any time of year, but clearest from December to March. Its eastern side (Ella, Haputale) stays relatively dry in July and August while the western slopes are wet.</p>
+  </section>
+
+  <section class="mt-10" aria-labelledby="table">
+    <h2 id="table" class="text-2xl font-semibold mb-3">Region by month</h2>
+    <ScoreLegend className="mb-3" />
+    <div class="overflow-x-auto rounded-2xl border border-line bg-white">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="text-left">
+            <th class="p-2 sticky left-0 bg-white">Region</th>
+            {MONTH_NAMES.map((n, i) => <th class="p-1 text-center font-medium"><a href={paths.month((i + 1) as Month)}>{n.slice(0, 3)}</a></th>)}
+          </tr>
+        </thead>
+        <tbody>
+          {climate.map((z) => (
+            <tr class="border-t border-line">
+              <th class="p-2 text-left font-medium sticky left-0 bg-white whitespace-nowrap">{z.name}</th>
+              {ALL_MONTHS.map((m) => {
+                const e = z.months[String(m)];
+                return <td class="p-1"><span class="block h-6 rounded" style={`background:${SCORE_COLOR[e.score]}`} title={`${monthName(m)}: ${SCORE_LABEL[e.score]}, ~${e.rainMm} mm`}><span class="sr-only">{SCORE_LABEL[e.score]}</span></span></td>;
+              })}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <ul class="mt-4 text-sm space-y-1">
+      {climate.map((z) => <li><strong>{z.name}:</strong> best {monthRange(bestMonthsFor(dataset, z.id))}</li>)}
+    </ul>
+    <p class="mt-3 text-xs text-muted">Rainfall figures are approximate monthly averages for a representative station in each region. Check them against the Department of Meteorology's climate normals before relying on them.</p>
+  </section>
+
+  <section class="mt-10">
+    <h2 class="text-2xl font-semibold mb-3">Pick your month</h2>
+    <MonthGrid />
+  </section>
+
+  <FaqBlock items={faq} />
+  <RelatedLinks groups={[
+    { title: 'Month guides', links: ALL_MONTHS.map((m) => ({ href: paths.month(m), label: monthName(m) })) },
+    { title: 'Itineraries', links: DURATIONS.map((d) => ({ href: paths.duration(d), label: `${d} days` })) },
+  ]} />
+</Base>

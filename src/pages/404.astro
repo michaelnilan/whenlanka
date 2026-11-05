@@ -1,0 +1,11 @@
+---
+import Base from '../layouts/Base.astro';
+import { DURATIONS, paths } from '../lib/slugs';
+---
+<Base title="Page not found" description="This page doesn't exist." path="/404" noindex>
+  <h1 class="text-3xl sm:text-4xl font-semibold">Lost in the tea country?</h1>
+  <p class="mt-3 text-lg">We couldn't find that page. Try the <a href="/">trip planner</a>, the <a href="/when">month-by-month guide</a> or a ready-made itinerary:</p>
+  <ul class="mt-4 flex flex-wrap gap-2">
+    {DURATIONS.map((d) => <li><a class="inline-block px-3 py-1 rounded-full border border-line bg-white no-underline" href={paths.duration(d)}>{d} days</a></li>)}
+  </ul>
+</Base>

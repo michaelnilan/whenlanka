@@ -1,0 +1,54 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/astro/Breadcrumbs.astro';
+import PlaceCard from '../../components/astro/PlaceCard.astro';
+import RelatedLinks from '../../components/astro/RelatedLinks.astro';
+import StaticMap from '../../components/StaticMap';
+import { climate, places } from '../../lib/data';
+import { INTERESTS, paths } from '../../lib/slugs';
+import { bestMonthsFor, monthRange } from '../../lib/content';
+import { dataset } from '../../lib/data';
+import { breadcrumbs } from '../../lib/jsonld';
+import { scoreZones } from '../../engine';
+
+const crumbs = [{ name: 'Home', path: '/' }, { name: 'Places', path: '/places' }];
+const sorted = [...places].sort((a, b) => b.weight - a.weight);
+const neutral = scoreZones(2, climate).scores;
+---
+<Base title="Places to Visit in Sri Lanka: 35 Stops & When to Go" description="Sri Lanka's best places, from Sigiriya and Ella to Arugam Bay and Jaffna, with the best months for each and the itineraries that include them." path="/places" jsonld={[breadcrumbs(crumbs)]}>
+  <Breadcrumbs items={crumbs} />
+  <h1 class="text-3xl sm:text-4xl font-semibold">Places to visit in Sri Lanka</h1>
+  <p class="mt-3 text-lg text-ink/80">{places.length} stops the planner uses, each with its best months. Filter by what you're into.</p>
+  <div class="mt-6 grid gap-6 md:grid-cols-[240px_1fr] items-start">
+    <div class="rounded-2xl border border-line bg-white p-3 md:sticky md:top-20">
+      <StaticMap zones={climate} scores={neutral} stops={sorted.slice(0, 12)} width={220} className="w-full h-auto" title="Top 12 places in Sri Lanka" />
+      <p class="text-xs text-muted mt-1">Numbers mark the 12 most-visited stops.</p>
+    </div>
+    <div>
+      <div class="flex flex-wrap gap-1.5 mb-4" role="group" aria-label="Filter by interest">
+        <button type="button" data-filter="" class="filter-btn text-sm px-3 py-1 rounded-full border bg-teal text-white border-teal">All</button>
+        {INTERESTS.map((i) => <button type="button" data-filter={i.tag} class="filter-btn text-sm px-3 py-1 rounded-full border bg-white border-line">{i.label}</button>)}
+      </div>
+      <div class="grid gap-3 sm:grid-cols-2">
+        {sorted.map((p) => <PlaceCard place={p} note={`Best: ${monthRange(bestMonthsFor(dataset, p.zone))}`} />)}
+      </div>
+    </div>
+  </div>
+  <RelatedLinks groups={[{ title: 'By interest', links: INTERESTS.map((i) => ({ href: paths.durationInterest(10, i.tag), label: `10 days: ${i.label}` })) }]} />
+</Base>
+<script>
+  const btns = document.querySelectorAll<HTMLButtonElement>('.filter-btn');
+  btns.forEach((b) =>
+    b.addEventListener('click', () => {
+      const f = b.dataset.filter;
+      btns.forEach((x) => {
+        const on = x === b;
+        x.classList.toggle('bg-teal', on); x.classList.toggle('text-white', on); x.classList.toggle('border-teal', on);
+        x.classList.toggle('bg-white', !on); x.classList.toggle('border-line', !on);
+      });
+      document.querySelectorAll<HTMLElement>('.place-card').forEach((c) => {
+        c.style.display = !f || (c.dataset.tags ?? '').split(' ').includes(f) ? '' : 'none';
+      });
+    }),
+  );
+</script>

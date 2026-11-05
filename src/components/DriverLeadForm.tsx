@@ -1,11 +1,11 @@
-import { useState, type FormEvent } from 'react';
+import { useState, type ComponentProps } from 'react';
 import { track } from '../lib/analytics';
 
 type Props = { endpoint?: string; routeSummary: string; days: number; month: string };
 
 export default function DriverLeadForm({ endpoint, routeSummary, days, month }: Props) {
   const [state, setState] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
-  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const onSubmit: ComponentProps<'form'>['onSubmit'] = async (e) => {
     e.preventDefault();
     if (!endpoint) { setState('error'); return; }
     setState('sending');

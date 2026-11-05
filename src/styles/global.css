@@ -1,4 +1,10 @@
 @import "tailwindcss";
+/* self-hosted fonts (latin subset): no third-party request, no render-blocking stylesheet */
+@import "@fontsource/inter/latin-400.css";
+@import "@fontsource/inter/latin-500.css";
+@import "@fontsource/inter/latin-600.css";
+@import "@fontsource/inter/latin-700.css";
+@import "@fontsource/fraunces/latin-600.css";
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
@@ -10,7 +16,7 @@
   --color-line: #e6dfd1;
   --color-teal: #0f6e6e;
   --color-teal-dark: #0a5151;
-  --color-saffron: #e3922b;
+  --color-saffron: #b35c00;
   --color-score-3: #2f9e5b;
   --color-score-2: #9bbb3c;
   --color-score-1: #e3a23b;
@@ -21,6 +27,8 @@ html { background: var(--color-sand); color: var(--color-ink); }
 body { font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
 h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.01em; }
 a { color: var(--color-teal); }
+p a, li a, td a, figcaption a { text-decoration: underline; text-underline-offset: 2px; }
+a.no-underline { text-decoration: none; }
 .prose-body p { margin: 0 0 1em; line-height: 1.7; }
 .prose-body h2 { font-size: 1.5rem; margin: 1.6em 0 0.5em; font-weight: 600; }
 .prose-body h3 { font-size: 1.2rem; margin: 1.3em 0 0.4em; font-weight: 600; }

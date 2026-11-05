@@ -1,0 +1,29 @@
+---
+import { getCollection, render } from 'astro:content';
+import Prose from '../../layouts/Prose.astro';
+import RouteSummary from '../../components/astro/RouteSummary.astro';
+import RelatedLinks from '../../components/astro/RelatedLinks.astro';
+import { monthName, type Month } from '../../engine';
+import { MARKETS, paths } from '../../lib/slugs';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('markets');
+  return entries.map((e) => ({ params: { market: e.id }, props: { entry: e } }));
+}
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const d = entry.data;
+---
+<Prose title={d.title} description={d.description} h1={d.h1} path={paths.market(entry.id)}>
+  <div class="not-prose grid sm:grid-cols-2 gap-3 mb-6">
+    <div class="rounded-xl border border-line bg-white p-4"><p class="text-xs uppercase tracking-wide text-muted">Flights from {d.country}</p><p class="mt-1">{d.flight}</p></div>
+    <div class="rounded-xl border border-line bg-white p-4"><p class="text-xs uppercase tracking-wide text-muted">Visa</p><p class="mt-1">Sri Lanka's entry rules have changed several times since 2023. Check the official ETA site, <a href="https://www.eta.gov.lk" rel="noopener" target="_blank">eta.gov.lk</a>, before you book.</p></div>
+  </div>
+  <Content components={{ RouteSummary }} />
+  <h2>Routes for your holiday dates</h2>
+  {d.holidays.map((h) => <RouteSummary days={h.days} month={h.month} label={`${h.name}: ${h.days} days in ${monthName(h.month as Month)}`} />)}
+  <RelatedLinks groups={[
+    { title: 'Suggested trip lengths', links: d.durations.map((n) => ({ href: paths.duration(n), label: `${n} days` })) },
+    { title: 'Other countries', links: MARKETS.filter((m) => m !== entry.id).map((m) => ({ href: paths.market(m), label: m === 'uk' ? 'UK' : m[0].toUpperCase() + m.slice(1) })) },
+  ]} />
+</Prose>

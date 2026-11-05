@@ -1,0 +1,91 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/astro/Breadcrumbs.astro';
+import FaqBlock from '../../components/astro/FaqBlock.astro';
+import RelatedLinks from '../../components/astro/RelatedLinks.astro';
+import StaticMap from '../../components/StaticMap';
+import ClimateStrip from '../../components/ClimateStrip';
+import { AffiliateRow } from '../../components/DayList';
+import { MonasteryCard } from '../../components/StopDetail';
+import { haversineKm, monthName, scoreZones } from '../../engine';
+import { climate, dataset, monasteries, places, zoneById } from '../../lib/data';
+import { paths } from '../../lib/slugs';
+import { bestMonthsFor, monthRange, routeLine } from '../../lib/content';
+import { itinerariesWith } from '../../lib/matrix';
+import { breadcrumbs, faqPage, touristAttraction } from '../../lib/jsonld';
+import type { Month, Place } from '../../engine';
+
+export function getStaticPaths() {
+  return places.map((p) => ({ params: { slug: p.slug }, props: { place: p } }));
+}
+const { place } = Astro.props as { place: Place };
+const zone = zoneById.get(place.zone)!;
+const best = bestMonthsFor(dataset, place.zone);
+const bestText = monthRange(best);
+const peak = best[0] ?? 1;
+const path = paths.place(place.slug);
+const nearby = places
+  .filter((p) => p.id !== place.id)
+  .map((p) => ({ p, km: haversineKm(place, p) }))
+  .sort((a, b) => a.km - b.km)
+  .slice(0, 4);
+const its = itinerariesWith(place.id, 3);
+const shrines = monasteries.filter((m) => m.nearPlace === place.id);
+const crumbs = [{ name: 'Home', path: '/' }, { name: 'Places', path: '/places' }, { name: place.name, path }];
+const wet = Object.entries(zone.months).filter(([, v]) => v.score === 0).map(([k]) => monthName(Number(k) as Month));
+const faq = [
+  { q: `When is the best time to visit ${place.name}?`, a: `${bestText}. ${place.name} is in the ${zone.name} region${wet.length ? `, which is in monsoon in ${wet.join(' and ')}` : ''}.` },
+  { q: `How many nights do you need in ${place.name}?`, a: `${place.minNights === place.maxNights ? place.minNights : `${place.minNights} to ${place.maxNights}`} night${place.maxNights > 1 ? 's' : ''} is enough for the highlights.` },
+  { q: `What is there to do in ${place.name}?`, a: place.highlights.join('; ') + '.' },
+];
+---
+<Base
+  title={`${place.name}, Sri Lanka: Things to Do & Best Time to Visit`}
+  description={`${place.blurb} Best time: ${bestText}.`.slice(0, 300)}
+  path={path}
+  jsonld={[touristAttraction(place, path), breadcrumbs(crumbs), faqPage(faq)]}
+>
+  <Breadcrumbs items={crumbs} />
+  <h1 class="text-3xl sm:text-4xl font-semibold">{place.name}</h1>
+  <p class="mt-1 text-muted">{zone.name} · best {bestText}</p>
+  <div class="mt-5 grid gap-6 md:grid-cols-[1fr_240px] items-start">
+    <div>
+      <p class="text-lg leading-relaxed">{place.blurb}</p>
+      <h2 class="text-2xl font-semibold mt-6 mb-2">Things to do in {place.name}</h2>
+      <ul class="list-disc pl-5 space-y-1.5">{place.highlights.map((h) => <li>{h}</li>)}</ul>
+      <AffiliateRow place={place} />
+    </div>
+    <figure class="rounded-2xl border border-line bg-white p-3">
+      <StaticMap zones={climate} scores={scoreZones(peak, climate).scores} stops={[place]} width={220} className="w-full h-auto" title={`${place.name} on a map of Sri Lanka`} />
+      <figcaption class="text-xs text-muted mt-1">Shading for {monthName(peak)}.</figcaption>
+    </figure>
+  </div>
+
+  <section class="mt-8" aria-labelledby="weather">
+    <h2 id="weather" class="text-2xl font-semibold mb-2">When to visit {place.name}</h2>
+    <div class="rounded-2xl border border-line bg-white p-4"><ClimateStrip zone={zone} /></div>
+  </section>
+
+  {its.length > 0 && (
+    <section class="mt-8" aria-labelledby="its">
+      <h2 id="its" class="text-2xl font-semibold mb-2">Itineraries that include {place.name}</h2>
+      <ul class="space-y-2">
+        {its.map(({ days, month, it }) => <li class="rounded-xl border border-line bg-white p-3"><a class="font-medium" href={paths.durationMonth(days, month)}>{days} days in {monthName(month)}</a><span class="block text-sm text-muted">{routeLine(it)}</span></li>)}
+      </ul>
+    </section>
+  )}
+
+  {shrines.length > 0 && (
+    <section class="mt-8" aria-labelledby="sacred">
+      <h2 id="sacred" class="text-2xl font-semibold mb-2">Sacred &amp; Silent near {place.name}</h2>
+      <div class="grid gap-3">{shrines.map((m) => <MonasteryCard monastery={m} compact />)}</div>
+    </section>
+  )}
+
+  <FaqBlock items={faq} />
+  <RelatedLinks groups={[
+    { title: 'Nearby', links: nearby.map(({ p, km }) => ({ href: paths.place(p.slug), label: `${p.name} (${Math.round(km)} km)` })) },
+    { title: 'Plan around it', links: [...its.map(({ days, month }) => ({ href: paths.durationMonth(days, month), label: `${days} days, ${monthName(month)}` })), { href: paths.month(peak), label: `Sri Lanka in ${monthName(peak)}` }] },
+    { title: 'More', links: [...shrines.map((m) => ({ href: paths.monastery(m.slug), label: m.name })), { href: '/places', label: 'All places' }] },
+  ]} />
+</Base>

@@ -74,7 +74,7 @@ export const MonasterySchema = z.object({
   etiquette: z.array(z.string()).min(1),
   contact: z.string().optional(),
   blurb: z.string(),
-  source: z.string().url(),
+  source: z.url(),
 });
 
 export const PlacesFile = z.array(PlaceSchema);

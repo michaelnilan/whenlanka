@@ -14,9 +14,11 @@ type Props = {
   width?: number;
   className?: string;
   title?: string;
+  /** draw stop numbers (off for OG images, where no font is available to the rasteriser) */
+  numbered?: boolean;
 };
 
-export default function StaticMap({ zones, scores, polyline = [], stops = [], monasteries = [], highlight, width = 320, className, title }: Props) {
+export default function StaticMap({ zones, scores, polyline = [], stops = [], monasteries = [], highlight, width = 320, className, title, numbered = true }: Props) {
   const { project, height } = projector(width);
   const clipId = 'coast-clip';
   return (
@@ -58,9 +60,9 @@ export default function StaticMap({ zones, scores, polyline = [], stops = [], mo
         return (
           <g key={s.id}>
             <circle cx={x} cy={y} r={on ? 10 : 8} fill={on ? '#e3922b' : ROUTE_COLOR} stroke="#fff" strokeWidth="1.5" />
-            <text x={x} y={y + 3.5} textAnchor="middle" fontSize="10" fontWeight="700" fill="#fff" fontFamily="system-ui, sans-serif">
+            {numbered && <text x={x} y={y + 3.5} textAnchor="middle" fontSize="10" fontWeight="700" fill="#fff" fontFamily="system-ui, sans-serif">
               {i + 1}
-            </text>
+            </text>}
           </g>
         );
       })}

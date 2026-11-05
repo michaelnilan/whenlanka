@@ -1,0 +1,18 @@
+---
+import Base from './Base.astro';
+import Breadcrumbs from '../components/astro/Breadcrumbs.astro';
+import { breadcrumbs } from '../lib/jsonld';
+interface Props {
+  frontmatter?: { title: string; description: string; h1?: string; path: string; section?: { name: string; path: string } };
+  title?: string; description?: string; h1?: string; path?: string; section?: { name: string; path: string };
+}
+const fm = Astro.props.frontmatter ?? (Astro.props as Required<Props>);
+const crumbs = [{ name: 'Home', path: '/' }, ...(fm.section ? [fm.section] : []), { name: fm.h1 ?? fm.title, path: fm.path }];
+---
+<Base title={fm.title} description={fm.description} path={fm.path} jsonld={[breadcrumbs(crumbs)]}>
+  <Breadcrumbs items={crumbs} />
+  <h1 class="text-3xl sm:text-4xl font-semibold mb-6">{fm.h1 ?? fm.title}</h1>
+  <article class="prose-body text-[17px]">
+    <slot />
+  </article>
+</Base>

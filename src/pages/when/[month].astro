@@ -1,0 +1,100 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/astro/Breadcrumbs.astro';
+import FaqBlock from '../../components/astro/FaqBlock.astro';
+import RelatedLinks from '../../components/astro/RelatedLinks.astro';
+import PlaceCard from '../../components/astro/PlaceCard.astro';
+import StaticMap from '../../components/StaticMap';
+import ClimateStrip, { ScoreLegend } from '../../components/ClimateStrip';
+import { ALL_MONTHS, buildRoute, monthName, monthSlug, scoreZones, type Month } from '../../engine';
+import { climate, dataset } from '../../lib/data';
+import { DURATIONS, paths } from '../../lib/slugs';
+import { routeLine, topPlacesForMonth, zoneLists } from '../../lib/content';
+import { breadcrumbs, faqPage } from '../../lib/jsonld';
+import { SCORE_LABEL } from '../../components/colors';
+
+export function getStaticPaths() {
+  return ALL_MONTHS.map((m) => ({ params: { month: monthSlug(m) }, props: { m } }));
+}
+const { m } = Astro.props as { m: Month };
+const name = monthName(m);
+const path = paths.month(m);
+const { scores, best } = scoreZones(m, climate);
+const { go, skip } = zoneLists(dataset, m);
+const top = topPlacesForMonth(dataset, m, 6);
+const bestZone = climate.find((z) => z.id === best)!;
+const routes = [7, 14].map((d) => ({ d, it: buildRoute({ month: m, days: d, interests: [] }, dataset) }));
+const prev = (((m + 10) % 12) + 1) as Month;
+const next = ((m % 12) + 1) as Month;
+const crumbs = [{ name: 'Home', path: '/' }, { name: 'Best time to visit', path: '/when' }, { name, path }];
+const faq = [
+  { q: `Is ${name} a good time to visit Sri Lanka?`, a: `${go.length ? `Yes, if you go to the right side of the island. In ${name} the ${go.map((z) => z.name).join(', ')} ${go.length > 1 ? 'are' : 'is'} ${go.some((z) => z.months[String(m)].score === 3) ? 'at or near their best' : 'fine'}.` : `${name} is one of the wettest months island-wide.`}${skip.length ? ` Avoid or expect rain in the ${skip.map((z) => z.name).join(', ')}.` : ''}` },
+  { q: `Where is the best weather in Sri Lanka in ${name}?`, a: `The ${bestZone.name}. ${bestZone.months[String(m)].note ?? `It averages about ${bestZone.months[String(m)].rainMm} mm of rain in ${name}.`}` },
+  { q: `What is a good ${name} itinerary?`, a: `For two weeks: ${routeLine(routes[1].it)}. For one week: ${routeLine(routes[0].it)}. Both start and end at Negombo near the airport.` },
+];
+---
+<Base
+  title={`Sri Lanka in ${name}: Weather, Where to Go & Itinerary`}
+  description={`Where's dry in Sri Lanka in ${name}? Go: ${go.map((z) => z.name).join(', ') || 'few regions'}. ${skip.length ? `Skip: ${skip.map((z) => z.name).join(', ')}.` : ''} With a route map and itineraries.`.slice(0, 300)}
+  path={path}
+  jsonld={[breadcrumbs(crumbs), faqPage(faq)]}
+>
+  <Breadcrumbs items={crumbs} />
+  <h1 class="text-3xl sm:text-4xl font-semibold">Sri Lanka in {name}</h1>
+  <p class="mt-3 text-lg text-ink/80">Best region in {name}: <strong>{bestZone.name}</strong>. {bestZone.months[String(m)].note}</p>
+
+  <div class="mt-6 grid gap-6 md:grid-cols-[280px_1fr] items-start">
+    <figure class="rounded-2xl border border-line bg-white p-3">
+      <StaticMap zones={climate} scores={scores} polyline={routes[1].it.polyline} stops={routes[1].it.stops} width={260} className="w-full h-auto" title={`Sri Lanka weather map for ${name}`} />
+      <figcaption class="text-xs text-muted mt-2">Shaded by conditions in {name}; line shows the 14-day route.</figcaption>
+      <ScoreLegend className="mt-2" />
+    </figure>
+    <div class="grid gap-4 sm:grid-cols-2">
+      <section class="rounded-2xl border border-line bg-white p-4" aria-labelledby="go">
+        <h2 id="go" class="text-xl font-semibold text-[#2f7a4c]">Go here</h2>
+        <ul class="mt-2 space-y-2 text-sm">
+          {go.length ? go.map((z) => <li><strong>{z.name}</strong> ({SCORE_LABEL[z.months[String(m)].score].toLowerCase()}){z.months[String(m)].note && <span class="block text-muted">{z.months[String(m)].note}</span>}</li>) : <li>No region is reliably dry this month; plan for showers.</li>}
+        </ul>
+      </section>
+      <section class="rounded-2xl border border-line bg-white p-4" aria-labelledby="skip">
+        <h2 id="skip" class="text-xl font-semibold text-[#9a5b13]">Skip or expect rain</h2>
+        <ul class="mt-2 space-y-2 text-sm">
+          {skip.length ? skip.map((z) => <li><strong>{z.name}</strong> ({SCORE_LABEL[z.months[String(m)].score].toLowerCase()}){z.months[String(m)].note && <span class="block text-muted">{z.months[String(m)].note}</span>}</li>) : <li>Nowhere is in monsoon this month.</li>}
+        </ul>
+      </section>
+      <section class="sm:col-span-2 rounded-2xl border border-line bg-white p-4" aria-labelledby="routes">
+        <h2 id="routes" class="text-xl font-semibold">Itineraries for {name}</h2>
+        <ul class="mt-2 space-y-2 text-sm">
+          {routes.map(({ d, it }) => <li><a href={paths.durationMonth(d, m)} class="font-medium">{d} days in {name}</a>: {routeLine(it)}</li>)}
+        </ul>
+        <p class="mt-3 text-sm">Other lengths: {DURATIONS.map((d, i) => <>{i > 0 && ' · '}<a href={paths.durationMonth(d, m)}>{d} days</a></>)}</p>
+      </section>
+    </div>
+  </div>
+
+  <section class="mt-10" aria-labelledby="regions">
+    <h2 id="regions" class="text-2xl font-semibold mb-3">Weather by region</h2>
+    <div class="grid gap-4 sm:grid-cols-2">
+      {climate.map((z) => (
+        <div class="rounded-2xl border border-line bg-white p-4">
+          <p class="font-medium">{z.name} <span class="text-sm text-muted font-normal">· ~{z.months[String(m)].rainMm} mm in {name}</span></p>
+          <div class="mt-2"><ClimateStrip zone={z} month={m} /></div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="mt-10" aria-labelledby="places">
+    <h2 id="places" class="text-2xl font-semibold mb-3">Top places in {name}</h2>
+    <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      {top.map((p) => <PlaceCard place={p} />)}
+    </div>
+  </section>
+
+  <FaqBlock items={faq} />
+  <RelatedLinks groups={[
+    { title: `${name} itineraries`, links: DURATIONS.map((d) => ({ href: paths.durationMonth(d, m), label: `${d} days` })) },
+    { title: 'Neighbouring months', links: [{ href: paths.month(prev), label: `← ${monthName(prev)}` }, { href: paths.month(next), label: `${monthName(next)} →` }, { href: paths.when(), label: 'All months' }] },
+    { title: `Best places in ${name}`, links: top.slice(0, 5).map((p) => ({ href: paths.place(p.slug), label: p.name })) },
+  ]} />
+</Base>

@@ -55,10 +55,23 @@ function toSearch(s: RouteInput): string {
   return q.toString().replace(/%2C/g, ',');
 }
 
+function useIsDesktop(): boolean | undefined {
+  const [v, setV] = useState<boolean | undefined>(undefined);
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 1024px)');
+    const on = () => setV(mq.matches);
+    on();
+    mq.addEventListener('change', on);
+    return () => mq.removeEventListener('change', on);
+  }, []);
+  return v;
+}
+
 export default function Planner({ initial, data, formEndpoint, readUrl = true, showLeadForm = true, autoMonth = false }: Props) {
   const [state, setState] = useState<RouteInput>({ pace: 'normal', sacred: false, ...initial });
   const [selected, setSelected] = useState<string | undefined>();
   const touched = useRef(false);
+  const isDesktop = useIsDesktop();
 
   useEffect(() => {
     if (!readUrl) return;
@@ -125,6 +138,7 @@ export default function Planner({ initial, data, formEndpoint, readUrl = true, s
 
         <div className="lg:hidden">
           <IslandMap
+            interactive={isDesktop === false}
             className="h-[380px]"
             zones={data.climate}
             zoneScores={itinerary.zoneScores}
@@ -166,6 +180,7 @@ export default function Planner({ initial, data, formEndpoint, readUrl = true, s
       <div className="hidden lg:block min-w-0">
         <div className="sticky top-4 space-y-3">
           <IslandMap
+            interactive={isDesktop === true}
             className="h-[min(72vh,640px)]"
             zones={data.climate}
             zoneScores={itinerary.zoneScores}

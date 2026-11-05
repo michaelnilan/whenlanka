@@ -40,6 +40,8 @@ type Props = {
   selectedStop?: string;
   onMarkerClick?: (placeId: string) => void;
   className?: string;
+  /** false → static SVG only (e.g. the layout slot that isn't visible) */
+  interactive?: boolean;
 };
 
 function hatchImage(): ImageData | undefined {
@@ -72,7 +74,7 @@ const lineGeoJSON = (polyline: [number, number][]) => ({
   geometry: { type: 'LineString' as const, coordinates: polyline },
 });
 
-export default function IslandMap({ zones, zoneScores, polyline, stops, monasteries, selectedStop, onMarkerClick, className = '' }: Props) {
+export default function IslandMap({ zones, zoneScores, polyline, stops, monasteries, selectedStop, onMarkerClick, className = '', interactive = true }: Props) {
   const el = useRef<HTMLDivElement>(null);
   const map = useRef<MLMap | null>(null);
   const lib = useRef<MapLib | null>(null);
@@ -84,8 +86,24 @@ export default function IslandMap({ zones, zoneScores, polyline, stops, monaster
   const zonesRef = useRef({ zones, scores: zoneScores, polyline });
   zonesRef.current = { zones, scores: zoneScores, polyline };
 
+  // load MapLibre only once the map is on screen and the browser is idle
+  const [wanted, setWanted] = useState(false);
+  useEffect(() => {
+    if (!interactive || wanted || !el.current) return;
+    const io = new IntersectionObserver((entries) => {
+      if (!entries.some((e) => e.isIntersecting)) return;
+      io.disconnect();
+      const ric = (window as unknown as { requestIdleCallback?: (cb: () => void, o?: { timeout: number }) => number }).requestIdleCallback;
+      if (ric) ric(() => setWanted(true), { timeout: 2500 });
+      else window.setTimeout(() => setWanted(true), 300);
+    }, { rootMargin: '200px' });
+    io.observe(el.current);
+    return () => io.disconnect();
+  }, [interactive, wanted]);
+
   // create the map once
   useEffect(() => {
+    if (!wanted) return;
     let cancelled = false;
     import('maplibre-gl')
       .then((mod) => {
@@ -147,9 +165,10 @@ export default function IslandMap({ zones, zoneScores, polyline, stops, monaster
       cancelled = true;
       map.current?.remove();
       map.current = null;
+      setReady(false);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [wanted]);
 
   // update layers + markers when the itinerary changes
   useEffect(() => {

@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import type { Day, Itinerary, Leg, Place } from '../engine';
 import { DISCLOSURE, placeLinks, retreat, train, type AffiliateLink } from '../lib/affiliates';
-import { track } from '../lib/analytics';
 import { MonasteryCard } from './StopDetail';
 
 const fmtDuration = (min: number) => {
@@ -27,18 +26,21 @@ export function LegBadge({ leg, from, ctx }: { leg: Leg; from?: string; ctx?: Re
   );
 }
 
+/** Plausible "tagged events": tracked from the class names, so it works without hydration too. */
+const plausibleClass = (props: Record<string, string | number>) =>
+  ['plausible-event-name=affiliate_click', ...Object.entries(props).map(([k, v]) => `plausible-event-${k}=${String(v).replace(/\s+/g, '+')}`)].join(' ');
+
 export function AffiliateButton({ link, ctx = {}, small }: { link: AffiliateLink; ctx?: Record<string, string | number>; small?: boolean }) {
   return (
     <a
       href={link.url}
       target="_blank"
       rel="sponsored noopener"
-      onClick={() => track('affiliate_click', { kind: link.kind, partner: link.partner, ...ctx })}
-      className={
+      className={`${plausibleClass({ kind: link.kind, partner: link.partner, ...ctx })} ${
         small
           ? 'underline font-medium text-teal'
           : 'inline-flex items-center gap-1 text-sm px-3 py-1.5 rounded-lg border border-teal text-teal hover:bg-teal hover:text-white transition'
-      }
+      }`}
     >
       {link.label} <span aria-hidden="true">↗</span>
     </a>

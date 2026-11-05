@@ -1,0 +1,20 @@
+---
+// Inline, engine-generated route for hand-written pages, so prose never drifts from the planner.
+import { buildRoute, monthName, type Month, type Tag } from '../../engine';
+import { dataset } from '../../lib/data';
+import { paths } from '../../lib/slugs';
+import { routeLine } from '../../lib/content';
+interface Props { days: number; month: number; interest?: Tag; label?: string }
+const { days, month, interest, label } = Astro.props;
+const m = month as Month;
+const it = buildRoute({ month: m, days, interests: interest ? [interest] : [] }, dataset);
+const DUR = [5, 7, 10, 14, 18, 21];
+const near = DUR.reduce((a, b) => (Math.abs(b - days) < Math.abs(a - days) ? b : a));
+const href = `${paths.durationMonth(near, m)}?m=${m}&d=${days}${interest ? `&i=${interest}` : ''}`;
+---
+<div class="not-prose my-4 rounded-xl border border-line bg-white p-4">
+  <p class="text-xs uppercase tracking-wide text-muted">{label ?? `${days} days in ${monthName(m)}`}</p>
+  <p class="mt-1 font-medium">Negombo → {routeLine(it)} → Negombo</p>
+  {it.warnings.length > 0 && <p class="text-sm text-amber-800 mt-1">☂ {it.warnings[0]}</p>}
+  <a href={href} class="inline-block mt-2 text-sm font-medium">Open this route in the planner →</a>
+</div>
