@@ -1,0 +1,88 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from './Breadcrumbs.astro';
+import FaqBlock from './FaqBlock.astro';
+import RelatedLinks from './RelatedLinks.astro';
+import Planner from '../Planner';
+import ClimateStrip from '../ClimateStrip';
+import { ALL_MONTHS, buildRoute, monthName, type Month, type Tag } from '../../engine';
+import { dataset, zoneById } from '../../lib/data';
+import { DURATIONS, INTERESTS, interestByTag, paths } from '../../lib/slugs';
+import { itineraryDescription, itineraryFaq, itineraryTitle, routeLine } from '../../lib/content';
+import { breadcrumbs, faqPage, touristTrip } from '../../lib/jsonld';
+
+interface Props { days: number; month: Month; monthFixed: boolean; interest?: Tag; path: string }
+const { days, month, monthFixed, interest, path } = Astro.props;
+
+const it = buildRoute({ month, days, interests: interest ? [interest] : [] }, dataset);
+const title = itineraryTitle(days, monthFixed ? month : undefined, interest);
+const description = itineraryDescription(it, dataset);
+const mName = monthName(month);
+const h1 = interest
+  ? `${days}-day Sri Lanka ${interestByTag(interest).label.toLowerCase()} itinerary`
+  : monthFixed
+    ? `${days}-day Sri Lanka itinerary for ${mName}`
+    : `${days}-day Sri Lanka itinerary`;
+const faq = itineraryFaq(it, dataset);
+if (!monthFixed) {
+  faq.unshift({
+    q: `What is the best month for a ${days}-day Sri Lanka trip?`,
+    a: `${mName} is the driest month across the most regions, which is why this route is set to ${mName}. Pick your own month below and the route redraws around the monsoons.`,
+  });
+}
+const crumbs = [
+  { name: 'Home', path: '/' },
+  { name: `${days}-day itineraries`, path: paths.duration(days) },
+  ...(monthFixed || interest ? [{ name: interest ? interestByTag(interest).label : mName, path }] : []),
+];
+const zonesOnRoute = [...new Set(it.stops.map((s) => s.zone))].map((z) => zoneById.get(z)!);
+const formEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT;
+
+const related = [
+  { title: `${days} days, by month`, links: ALL_MONTHS.map((m) => ({ href: paths.durationMonth(days, m), label: monthName(m) })) },
+  { title: monthFixed ? `${mName}: other trip lengths` : 'Other trip lengths', links: DURATIONS.filter((d) => d !== days).map((d) => ({ href: monthFixed ? paths.durationMonth(d, month) : paths.duration(d), label: `${d} days` })) },
+  { title: `${days} days, by interest`, links: INTERESTS.filter((i) => i.tag !== interest).map((i) => ({ href: paths.durationInterest(days, i.tag), label: i.label })) },
+  { title: 'Stops on this route', links: it.stops.map((s) => ({ href: paths.place(s.slug), label: s.name })) },
+  { title: 'Weather', links: [{ href: paths.month(month), label: `Sri Lanka in ${mName}` }, { href: paths.when(), label: 'Best time to visit' }] },
+];
+---
+<Base
+  title={title}
+  description={description}
+  path={path}
+  wide
+  jsonld={[
+    touristTrip(it, h1, description, path, paths.place),
+    faqPage(faq),
+    breadcrumbs(crumbs),
+  ]}
+>
+  <Breadcrumbs items={crumbs} />
+  <h1 class="text-3xl sm:text-4xl font-semibold">{h1}</h1>
+  <p class="mt-3 text-lg text-ink/80 max-w-3xl">
+    {days} days{monthFixed || !interest ? ` in ${mName}` : ''}: <strong>{routeLine(it)}</strong>, starting and ending at Negombo by the airport.
+    {interest && ` Weighted towards ${interestByTag(interest).label.toLowerCase()} stops and shown for ${mName}; change the month and the route redraws around the monsoons.`}
+    {!interest && ' Move the sliders to change the month, the trip length or your interests.'}
+  </p>
+
+  <h2 class="sr-only">Route and day by day</h2>
+  <div class="mt-6">
+    <Planner client:load initial={{ month, days, interests: interest ? [interest] : [] }} data={dataset} formEndpoint={formEndpoint} />
+  </div>
+
+  <section class="mt-10" aria-labelledby="weather">
+    <h2 id="weather" class="text-2xl font-semibold">Weather in {mName}</h2>
+    <p class="mt-2 text-ink/80 max-w-3xl">Bars show average monthly rainfall for each region on this route; colour shows how good each month is. {mName} is outlined.</p>
+    <div class="mt-4 grid gap-4 sm:grid-cols-2">
+      {zonesOnRoute.map((z) => (
+        <div class="rounded-2xl border border-line bg-white p-4">
+          <p class="font-medium mb-2">{z.name}{z.months[String(month)].note && <span class="block text-sm text-muted font-normal">{z.months[String(month)].note}</span>}</p>
+          <ClimateStrip zone={z} month={month} />
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <FaqBlock items={faq} />
+  <RelatedLinks groups={related} />
+</Base>

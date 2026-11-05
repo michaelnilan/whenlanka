@@ -1,0 +1,12 @@
+---
+import ItineraryPage from '../../../components/astro/ItineraryPage.astro';
+import { DURATIONS, paths } from '../../../lib/slugs';
+import { bestOverallMonth } from '../../../lib/content';
+import { dataset } from '../../../lib/data';
+
+export function getStaticPaths() {
+  return DURATIONS.map((d) => ({ params: { duration: `${d}-days` }, props: { days: d } }));
+}
+const { days } = Astro.props;
+---
+<ItineraryPage days={days} month={bestOverallMonth(dataset)} monthFixed={false} path={paths.duration(days)} />

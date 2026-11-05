@@ -1,0 +1,14 @@
+---
+import type { Place } from '../../engine';
+import { paths } from '../../lib/slugs';
+interface Props { place: Place; note?: string }
+const { place, note } = Astro.props;
+---
+<a href={paths.place(place.slug)} data-tags={place.tags.join(' ')} class="place-card block rounded-2xl border border-line bg-white p-4 no-underline text-ink hover:border-teal transition">
+  <p class="text-lg font-semibold" style="font-family: var(--font-display)">{place.name}</p>
+  <p class="text-sm text-muted mt-1 line-clamp-3">{place.blurb}</p>
+  <p class="mt-2 flex flex-wrap gap-1">
+    {place.tags.map((t) => <span class="text-[11px] px-2 py-0.5 rounded-full bg-sand text-muted">{t}</span>)}
+  </p>
+  {note && <p class="text-xs mt-2 text-teal font-medium">{note}</p>}
+</a>

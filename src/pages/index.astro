@@ -1,0 +1,49 @@
+---
+import Base from '../layouts/Base.astro';
+import Planner from '../components/Planner';
+import MonthGrid from '../components/astro/MonthGrid.astro';
+import FaqBlock from '../components/astro/FaqBlock.astro';
+import RelatedLinks from '../components/astro/RelatedLinks.astro';
+import { dataset } from '../lib/data';
+import { DURATIONS, paths } from '../lib/slugs';
+import { faqPage } from '../lib/jsonld';
+import type { Month } from '../engine';
+
+const next = (((new Date().getMonth() + 1) % 12) + 1) as Month;
+const formEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT;
+const faq = [
+  { q: 'When is the best time to visit Sri Lanka?', a: 'There is no single best month, because two monsoons hit opposite sides of the island. December to March is best for the south and west coasts and the hill country; May to September is best for the east coast and the north. The Cultural Triangle in the middle is good for most of the year except October to December.' },
+  { q: 'How many days do you need in Sri Lanka?', a: 'Ten to fourteen days covers the Cultural Triangle, the hill-country train and one coast without rushing. Five to seven days is enough for a highlights loop; three weeks lets you add a second coast or the north.' },
+  { q: 'Is this planner free?', a: 'Yes. Routes are generated from open climate and travel-time data. We earn a small commission if you book a stay or tour through our links, and we pass private-driver requests to vetted local partners.' },
+];
+---
+<Base
+  title="Sri Lanka Trip Planner: Itinerary & Route Map by Month | whensrilanka"
+  description="Pick your month and trip length. Get a day-by-day Sri Lanka route on a map that avoids the monsoon: the Cultural Triangle, the hill-country train and the right coast."
+  path="/"
+  wide
+  jsonld={[
+    { '@context': 'https://schema.org', '@type': 'WebSite', name: 'whensrilanka', url: 'https://whensrilanka.com' },
+    faqPage(faq),
+  ]}
+>
+  <section class="mb-6">
+    <h1 class="text-3xl sm:text-5xl font-semibold max-w-3xl leading-tight">Where in Sri Lanka should you go in your month?</h1>
+    <p class="mt-3 text-lg text-ink/80 max-w-2xl">
+      Sri Lanka has two monsoons that hit opposite coasts. Tell us when you're travelling and for how long, and we'll draw a day-by-day route through the dry side of the island.
+    </p>
+  </section>
+  <Planner client:load initial={{ month: next, days: 10, interests: [] }} data={dataset} formEndpoint={formEndpoint} autoMonth />
+
+  <section class="mt-14">
+    <h2 class="text-2xl sm:text-3xl font-semibold mb-1">Sri Lanka month by month</h2>
+    <p class="text-ink/80 mb-4">Each bar is one region. Green is ideal; hatched grey is monsoon.</p>
+    <MonthGrid />
+  </section>
+
+  <FaqBlock items={faq} />
+  <RelatedLinks groups={[
+    { title: 'Ready-made itineraries', links: DURATIONS.map((d) => ({ href: paths.duration(d), label: `${d} days` })) },
+    { title: 'Plan around the weather', links: [{ href: '/when', label: 'Best time to visit' }, { href: '/places', label: 'All places' }, { href: '/sacred', label: 'Monasteries & meditation' }] },
+  ]} />
+</Base>

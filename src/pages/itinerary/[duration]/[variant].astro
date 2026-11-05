@@ -1,0 +1,24 @@
+---
+import ItineraryPage from '../../../components/astro/ItineraryPage.astro';
+import { ALL_MONTHS, monthSlug, type Month, type Tag } from '../../../engine';
+import { DURATIONS, INTERESTS, paths } from '../../../lib/slugs';
+import { bestOverallMonth } from '../../../lib/content';
+import { dataset } from '../../../lib/data';
+
+export function getStaticPaths() {
+  const best = bestOverallMonth(dataset);
+  return DURATIONS.flatMap((d) => [
+    ...ALL_MONTHS.map((m) => ({
+      params: { duration: `${d}-days`, variant: monthSlug(m) },
+      props: { days: d, month: m as Month, interest: undefined as Tag | undefined },
+    })),
+    ...INTERESTS.map((i) => ({
+      params: { duration: `${d}-days`, variant: i.slug },
+      props: { days: d, month: best as Month, interest: i.tag as Tag | undefined },
+    })),
+  ]);
+}
+const { days, month, interest } = Astro.props;
+const path = interest ? paths.durationInterest(days, interest) : paths.durationMonth(days, month);
+---
+<ItineraryPage days={days} month={month} monthFixed={!interest} interest={interest} path={path} />

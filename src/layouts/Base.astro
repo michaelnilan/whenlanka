@@ -1,0 +1,81 @@
+---
+import '../styles/global.css';
+import Seo from './Seo.astro';
+import { DISCLOSURE } from '../lib/affiliates';
+interface Props {
+  title: string;
+  description: string;
+  path: string;
+  jsonld?: object[];
+  noindex?: boolean;
+  ogImage?: string;
+  wide?: boolean;
+}
+const { wide = false, ...seo } = Astro.props;
+const plausible = import.meta.env.PUBLIC_PLAUSIBLE_DOMAIN;
+const nav = [
+  { href: '/', label: 'Planner' },
+  { href: '/when', label: 'Best time to visit' },
+  { href: '/itinerary/14-days', label: 'Itineraries' },
+  { href: '/places', label: 'Places' },
+  { href: '/sacred', label: 'Sacred & Silent' },
+];
+const current = Astro.url.pathname;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#0f6e6e" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <Seo {...seo} />
+    {plausible && <script defer data-domain={plausible} src="https://plausible.io/js/script.tagged-events.js" />}
+    {plausible && <script is:inline>window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>}
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <header class="border-b border-line bg-sand/90 backdrop-blur sticky top-0 z-30">
+      <div class="mx-auto max-w-6xl px-4 h-14 flex items-center justify-between gap-4">
+        <a href="/" class="flex shrink-0 items-center gap-2 no-underline text-ink font-semibold text-lg" style="font-family: var(--font-display)">
+          <img src="/favicon.svg" alt="" width="26" height="26" />
+          whensrilanka
+        </a>
+        <nav aria-label="Main" class="min-w-0 overflow-x-auto -mr-2">
+          <ul class="flex gap-1 text-sm whitespace-nowrap">
+            {nav.map((n) => (
+              <li class={n.href === '/' ? 'hidden sm:block' : ''}>
+                <a href={n.href} class:list={['px-2.5 py-1.5 rounded-md no-underline hover:bg-white', current === n.href || (n.href !== '/' && current.startsWith(n.href.split('/').slice(0, 2).join('/'))) ? 'text-teal font-semibold' : 'text-ink']}>{n.label}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class:list={['mx-auto w-full px-4 py-6 sm:py-8 flex-1', wide ? 'max-w-6xl' : 'max-w-4xl']}>
+      <slot />
+    </main>
+    <footer class="border-t border-line mt-12 bg-white/60">
+      <div class="mx-auto max-w-6xl px-4 py-8 grid gap-6 sm:grid-cols-3 text-sm">
+        <div>
+          <p class="font-semibold" style="font-family: var(--font-display)">whensrilanka</p>
+          <p class="text-muted mt-1">Tell us your month and how many days you have. We'll draw a route around Sri Lanka's two monsoons.</p>
+        </div>
+        <ul class="space-y-1">
+          <li><a href="/when">Best time to visit</a></li>
+          <li><a href="/itinerary/7-days">7-day itinerary</a> · <a href="/itinerary/10-days">10-day</a> · <a href="/itinerary/14-days">14-day</a></li>
+          <li><a href="/places">All places</a> · <a href="/sacred">Sacred &amp; Silent</a></li>
+          <li><a href="/guides/kandy-ella-train">Kandy–Ella train guide</a> · <a href="/guides/practical">Visa, money &amp; safety</a></li>
+          <li><a href="/from/india">From India</a> · <a href="/from/uk">UK</a> · <a href="/from/germany">Germany</a> · <a href="/from/australia">Australia</a> · <a href="/from/france">France</a> · <a href="/from/russia">Russia</a></li>
+        </ul>
+        <div class="text-muted space-y-1">
+          <p>{DISCLOSURE}</p>
+          <p><a href="/about">About</a> · <a href="/privacy">Privacy</a></p>
+          <p>Weather data is a guide, not a forecast.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
