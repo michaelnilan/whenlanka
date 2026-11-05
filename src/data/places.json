@@ -1,0 +1,1146 @@
+[
+  {
+    "id": "colombo",
+    "name": "Colombo",
+    "slug": "colombo",
+    "lat": 6.9271,
+    "lng": 79.8612,
+    "zone": "southwest",
+    "tags": [
+      "city",
+      "food",
+      "heritage"
+    ],
+    "minNights": 1,
+    "maxNights": 2,
+    "weight": 0.4,
+    "blurb": "Sri Lanka's commercial capital: colonial streets, sea-facing Galle Face Green and the island's best restaurants.",
+    "highlights": [
+      "Sunset street food on Galle Face Green",
+      "Gangaramaya Temple and Seema Malaka",
+      "Pettah market and the Red Mosque",
+      "Crab curry at the Old Dutch Hospital"
+    ],
+    "affiliates": [
+      {
+        "kind": "stay",
+        "url": "",
+        "label": "Places to stay in Colombo"
+      },
+      {
+        "kind": "tour",
+        "url": "",
+        "label": "Guided tours"
+      }
+    ],
+    "image": "/places/colombo.jpg"
+  },
+  {
+    "id": "negombo",
+    "name": "Negombo",
+    "slug": "negombo",
+    "lat": 7.2083,
+    "lng": 79.8358,
+    "zone": "southwest",
+    "tags": [
+      "beach",
+      "food"
+    ],
+    "minNights": 1,
+    "maxNights": 2,
+    "weight": 0.3,
+    "gateway": true,
+    "blurb": "A relaxed fishing town 20 minutes from the airport, the easy first and last night of any trip.",
+    "highlights": [
+      "Dawn fish market on the lagoon",
+      "Dutch canal boat ride",
+      "St Mary's Church painted ceiling",
+      "Seafood on Lewis Place"
+    ],
+    "affiliates": [
+      {
+        "kind": "stay",
+        "url": "",
+        "label": "Places to stay in Negombo"
+      }
+    ],
+    "image": "/places/negombo.jpg"
+  },
+  {
+    "id": "sigiriya",
+    "name": "Sigiriya",
+    "slug": "sigiriya",
+    "lat": 7.957,
+    "lng": 80.7603,
+    "zone": "cultural",
+    "tags": [
+      "heritage",
+      "buddhist"
+    ],
+    "minNights": 2,
+    "maxNights": 3,
+    "weight": 0.95,
+    "blurb": "A 5th-century palace on top of a 200 m rock, and the best base for the whole Cultural Triangle.",
+    "highlights": [
+      "Climb Lion Rock at opening time",
+      "Pidurangala Rock for the sunrise view of Sigiriya",
+      "Frescoes and the Mirror Wall",
+      "Day trips to Dambulla, Polonnaruwa and Minneriya"
+    ],
+    "affiliates": [
+      {
+        "kind": "stay",
+        "url": "",
+        "label": "Places to stay in Sigiriya"
+      },
+      {
+        "kind": "tour",
+        "url": "",
+        "label": "Guided tours"
+      }
+    ],
+    "image": "/places/sigiriya.jpg"
+  },
+  {
+    "id": "dambulla",
+    "name": "Dambulla",
+    "slug": "dambulla",
+    "lat": 7.8567,
+    "lng": 80.6492,
+    "zone": "cultural",
+    "tags": [
+      "heritage",
+      "buddhist"
+    ],
+    "minNights": 1,
+    "maxNights": 1,
+    "weight": 0.5,
+    "blurb": "Five cave temples packed with 2,000 years of Buddhist murals and statues, 20 minutes from Sigiriya.",
+    "highlights": [
+      "Dambulla cave temple (Rangiri)",
+      "Painted ceilings of Cave 2",
+      "Dambulla wholesale vegetable market",
+      "Easy add-on to a Sigiriya stay"
+    ],
+    "affiliates": [
+      {
+        "kind": "stay",
+        "url": "",
+        "label": "Places to stay in Dambulla"
+      },
+      {
+        "kind": "tour",
+        "url": "",
+        "label": "Guided tours"
+      }
+    ],
+    "image": "/places/dambulla.jpg"
+  },
+  {
+    "id": "polonnaruwa",
+    "name": "Polonnaruwa",
+    "slug": "polonnaruwa",
+    "lat": 7.9403,
+    "lng": 81.0188,
+    "zone": "cultural",
+    "tags": [
+      "heritage",
+      "buddhist"
+    ],
+    "minNights": 1,
+    "maxNights": 2,
+    "weight": 0.6,
+    "blurb": "The medieval royal capital, best explored by bicycle among lakes, palaces and the Gal Vihara rock carvings.",
+    "highlights": [
+      "Gal Vihara reclining Buddha",
+      "Cycle the ancient city",
+      "Parakrama Samudra reservoir at sunset",
+      "Vatadage circular relic house"
+    ],
+    "affiliates": [
+      {
+        "kind": "stay",
+        "url": "",
+        "label": "Places to stay in Polonnaruwa"
+      },
+      {
+        "kind": "tour",
+        "url": "",
+        "label": "Guided tours"
+      }
+    ],
+    "image": "/places/polonnaruwa.jpg"
+  },
+  {
+    "id": "anuradhapura",
+    "name": "Anuradhapura",
+    "slug": "anuradhapura",
+    "lat": 8.3114,
+    "lng": 80.4037,
+    "zone": "cultural",
+    "tags": [
+      "heritage",
+      "buddhist"
+    ],
+    "minNights": 1,
+    "maxNights": 2,
+    "weight": 0.55,
+    "blurb": "The first great capital and still a living pilgrimage city, home to the oldest documented tree on earth.",
+    "highlights": [
+      "Sri Maha Bodhi sacred fig tree",
+      "Ruwanwelisaya stupa at dusk",
+      "Abhayagiri monastery ruins",
+      "Isurumuniya rock temple"
+    ],
+    "affiliates": [
+      {
+        "kind": "stay",
+        "url": "",
+        "label": "Places to stay in Anuradhapura"
+      },
+      {
+        "kind": "tour",
+        "url": "",
+        "label": "Guided tours"
+      }
+    ],
+    "image": "/places/anuradhapura.jpg"
+  },
+  {
+    "id": "mihintale",
+    "name": "Mihintale",
+    "slug": "mihintale",
+    "lat": 8.351,
+    "lng": 80.504,
+    "zone": "cultural",
+    "tags": [
+      "buddhist",
+      "heritage"
+    ],
+    "minNights": 1,
+    "maxNights": 1,
+    "weight": 0.35,
+    "blurb": "The hill where Buddhism arrived in Sri Lanka in 247 BCE, a short hop from Anuradhapura.",
+    "highlights": [
+      "Climb the 1,840 steps to Aradhana Gala",
+      "Kantaka Cetiya friezes",
+      "Poson full-moon festival in June",
+      "Views across the dry-zone plains"
+    ],
+    "affiliates": [
+      {
+        "kind": "stay",
+        "url": "",
+        "label": "Places to stay in Mihintale"
+      },
+      {
+        "kind": "tour",
+        "url": "",
+        "label": "Guided tours"
+      }
+    ],
+    "image": "/places/mihintale.jpg"
+  },
+  {
+    "id": "kandy",
+    "name": "Kandy",
+    "slug": "kandy",
+    "lat": 7.2906,
+    "lng": 80.6337,
+    "zone": "cultural",
+    "tags": [
+      "city",
+      "heritage",
+      "buddhist",
+      "food"
+    ],
+    "minNights": 2,
+    "maxNights": 3,
+    "weight": 0.9,
+    "blurb": "The last royal capital, around a lake and the Temple of the Tooth, and the start of the hill-country train.",
+    "highlights": [
+      "Temple of the Sacred Tooth Relic evening puja",
+      "Royal Botanic Gardens, Peradeniya",
+      "Kandyan dance performance",
+      "Board the scenic train to Ella"
+    ],
+    "affiliates": [
+      {
+        "kind": "stay",
+        "url": "",
+        "label": "Places to stay in Kandy"
+      },
+      {
+        "kind": "tour",
+        "url": "",
+        "label": "Guided tours"
+      }
+    ],
+    "image": "/places/kandy.jpg"
+  },
+  {
+    "id": "nuwara-eliya",
+    "name": "Nuwara Eliya",
+    "slug": "nuwara-eliya",
+    "lat": 6.9497,
+    "lng": 80.7891,
+    "zone": "hill",
+    "tags": [
+      "hill"
+    ],
+    "minNights": 1,
+    "maxNights": 2,
+    "weight": 0.7,
+    "blurb": "The 'Little England' hill station at 1,900 m: tea estates, cool nights and colonial-era hotels.",
+    "highlights": [
+      "Tea factory tour and tasting",
+      "Gregory Lake",
+      "Early start for Horton Plains",
+      "Victoria Park and the post office"
+    ],
+    "affiliates": [
+      {
+        "kind": "stay",
+        "url": "",
+        "label": "Places to stay in Nuwara Eliya"
+      }
+    ],
+    "image": "/places/nuwara-eliya.jpg"
+  },
+  {
+    "id": "ella",
+    "name": "Ella",
+    "slug": "ella",
+    "lat": 6.8667,
+    "lng": 81.0466,
+    "zone": "hill",
+    "tags": [
+      "hill"
+    ],
+    "minNights": 2,
+    "maxNights": 3,
+    "weight": 0.92,
+    "blurb": "A backpacker-favourite village in the tea hills with short, spectacular hikes and the Nine Arch Bridge.",
+    "highlights": [
+      "Nine Arch Bridge as the train crosses",
+      "Little Adam's Peak sunrise",
+      "Ella Rock hike",
+      "Ravana Falls"
+    ],
+    "affiliates": [
+      {
+        "kind": "stay",
+        "url": "",
+        "label": "Places to stay in Ella"
+      }
+    ],
+    "image": "/places/ella.jpg"
+  },
+  {
+    "id": "haputale",
+    "name": "Haputale",
+    "slug": "haputale",
+    "lat": 6.7684,
+    "lng": 80.958,
+    "zone": "hill",
+    "tags": [
+      "hill"
+    ],
+    "minNights": 1,
+    "maxNights": 2,
+    "weight": 0.4,
+    "blurb": "A quiet ridge-top town with some of the widest tea-country views on the island.",
+    "highlights": [
+      "Lipton's Seat at dawn",
+      "Dambatenne tea factory",
+      "Adisham Bungalow",
+      "Train ride from Ella"
+    ],
+    "affiliates": [
+      {
+        "kind": "stay",
+        "url": "",
+        "label": "Places to stay in Haputale"
+      }
+    ],
+    "image": "/places/haputale.jpg"
+  },
+  {
+    "id": "horton-plains",
+    "name": "Horton Plains",
+    "slug": "horton-plains",
+    "lat": 6.802,
+    "lng": 80.807,
+    "zone": "hill",
+    "tags": [
+      "hill",
+      "wildlife"
+    ],
+    "minNights": 1,
+    "maxNights": 1,
+    "weight": 0.45,
+    "blurb": "A high cloud-forest plateau ending at World's End, a sheer 870 m drop. Go early, before the mist rolls in.",
+    "highlights": [
+      "World's End viewpoint",
+      "Baker's Falls loop walk",
+      "Sambar deer on the grasslands",
+      "Start by 6 am for clear views"
+    ],
+    "affiliates": [
+      {
+        "kind": "stay",
+        "url": "",
+        "label": "Places to stay in Horton Plains"
+      },
+      {
+        "kind": "tour",
+        "url": "",
+        "label": "Tours & safaris"
+      }
+    ],
+    "image": "/places/horton-plains.jpg"
+  },
+  {
+    "id": "knuckles",
+    "name": "Knuckles Range",
+    "slug": "knuckles",
+    "lat": 7.45,
+    "lng": 80.78,
+    "zone": "hill",
+    "tags": [
+      "hill"
+    ],
+    "minNights": 2,
+    "maxNights": 3,
+    "weight": 0.35,
+    "blurb": "A rugged, little-visited mountain range near Kandy for multi-day treks between villages.",
+    "highlights": [
+      "Guided village-to-village trek",
+      "Pitawala Pathana grasslands",
+      "Mini World's End viewpoint",
+      "Cloud forest birding"
+    ],
+    "affiliates": [
+      {
+        "kind": "stay",
+        "url": "",
+        "label": "Places to stay in Knuckles Range"
+      }
+    ],
+    "image": "/places/knuckles.jpg"
+  },
+  {
+    "id": "yala",
+    "name": "Yala",
+    "slug": "yala",
+    "lat": 6.2833,
+    "lng": 81.2833,
+    "zone": "southwest",
+    "tags": [
+      "wildlife"
+    ],
+    "minNights": 2,
+    "maxNights": 2,
+    "weight": 0.82,
+    "blurb": "Sri Lanka's most-visited national park, with one of the highest leopard densities in the world. Base yourself in Tissamaharama.",
+    "highlights": [
+      "Dawn jeep safari for leopard",
+      "Sloth bear and elephant sightings",
+      "Tissa Wewa lake at sunset",
+      "Kataragama pilgrimage town nearby"
+    ],
+    "affiliates": [
+      {
+        "kind": "stay",
+        "url": "",
+        "label": "Places to stay in Yala"
+      },
+      {
+        "kind": "tour",
+        "url": "",
+        "label": "Tours & safaris"
+      }
+    ],
+    "image": "/places/yala.jpg"
+  },
+  {
+    "id": "udawalawe",
+    "name": "Udawalawe",
+    "slug": "udawalawe",
+    "lat": 6.474,
+    "lng": 80.8987,
+    "zone": "southwest",
+    "tags": [
+      "wildlife"
+    ],
+    "minNights": 1,
+    "maxNights": 2,
+    "weight": 0.55,
+    "blurb": "Open grassland park with near-guaranteed elephant herds, and the Elephant Transit Home for orphaned calves.",
+    "highlights": [
+      "Half-day jeep safari",
+      "Elephant Transit Home feeding",
+      "Udawalawe reservoir",
+      "Good stop between Ella and the coast"
+    ],
+    "affiliates": [
+      {
+        "kind": "stay",
+        "url": "",
+        "label": "Places to stay in Udawalawe"
+      },
+      {
+        "kind": "tour",
+        "url": "",
+        "label": "Tours & safaris"
+      }
+    ],
+    "image": "/places/udawalawe.jpg"
+  },
+  {
+    "id": "mirissa",
+    "name": "Mirissa",
+    "slug": "mirissa",
+    "lat": 5.9483,
+    "lng": 80.4716,
+    "zone": "southwest",
+    "tags": [
+      "beach",
+      "surf",
+      "food"
+    ],
+    "minNights": 2,
+    "maxNights": 4,
+    "weight": 0.85,
+    "blurb": "A palm-fringed crescent bay on the south coast, famous for blue-whale watching from November to April.",
+    "highlights": [
+      "Blue whale watching trip",
+      "Coconut Tree Hill",
+      "Parrot Rock at sunset",
+      "Beach-front seafood dinners"
+    ],
+    "affiliates": [
+      {
+        "kind": "stay",
+        "url": "",
+        "label": "Places to stay in Mirissa"
+      }
+    ],
+    "image": "/places/mirissa.jpg"
+  },
+  {
+    "id": "weligama",
+    "name": "Weligama",
+    "slug": "weligama",
+    "lat": 5.975,
+    "lng": 80.429,
+    "zone": "southwest",
+    "tags": [
+      "beach",
+      "surf"
+    ],
+    "minNights": 2,
+    "maxNights": 4,
+    "weight": 0.55,
+    "blurb": "A wide, gentle bay that is the south coast's best place to learn to surf.",
+    "highlights": [
+      "Beginner surf lessons",
+      "Stilt fishermen at Koggala",
+      "Taprobane Island view",
+      "Laid-back surf cafés"
+    ],
+    "affiliates": [
+      {
+        "kind": "stay",
+        "url": "",
+        "label": "Places to stay in Weligama"
+      }
+    ],
+    "image": "/places/weligama.jpg"
+  },
+  {
+    "id": "unawatuna",
+    "name": "Unawatuna",
+    "slug": "unawatuna",
+    "lat": 6.01,
+    "lng": 80.249,
+    "zone": "southwest",
+    "tags": [
+      "beach"
+    ],
+    "minNights": 2,
+    "maxNights": 3,
+    "weight": 0.6,
+    "blurb": "A sheltered swimming bay 10 minutes from Galle, with jungle-backed coves on either side.",
+    "highlights": [
+      "Jungle Beach",
+      "Japanese Peace Pagoda",
+      "Snorkelling off the reef",
+      "Sunset from Rumassala"
+    ],
+    "affiliates": [
+      {
+        "kind": "stay",
+        "url": "",
+        "label": "Places to stay in Unawatuna"
+      }
+    ],
+    "image": "/places/unawatuna.jpg"
+  },
+  {
+    "id": "galle",
+    "name": "Galle",
+    "slug": "galle",
+    "lat": 6.0328,
+    "lng": 80.217,
+    "zone": "southwest",
+    "tags": [
+      "heritage",
+      "city",
+      "food"
+    ],
+    "minNights": 2,
+    "maxNights": 3,
+    "weight": 0.88,
+    "blurb": "A UNESCO-listed 17th-century Dutch fort of ramparts, lighthouse and boutique cafés on the south-west tip.",
+    "highlights": [
+      "Walk the fort ramparts at sunset",
+      "Galle lighthouse and Flag Rock",
+      "Dutch Reformed Church",
+      "Boutique shopping on Pedlar Street"
+    ],
+    "affiliates": [
+      {
+        "kind": "stay",
+        "url": "",
+        "label": "Places to stay in Galle"
+      },
+      {
+        "kind": "tour",
+        "url": "",
+        "label": "Guided tours"
+      }
+    ],
+    "image": "/places/galle.jpg"
+  },
+  {
+    "id": "hikkaduwa",
+    "name": "Hikkaduwa",
+    "slug": "hikkaduwa",
+    "lat": 6.1395,
+    "lng": 80.1063,
+    "zone": "southwest",
+    "tags": [
+      "beach",
+      "surf"
+    ],
+    "minNights": 2,
+    "maxNights": 3,
+    "weight": 0.45,
+    "blurb": "A lively surf and snorkel town with a coral sanctuary and turtles that swim in to the shallows.",
+    "highlights": [
+      "Snorkel with sea turtles",
+      "Coral sanctuary glass-bottom boat",
+      "Surf the reef breaks",
+      "Tsunami photo museum"
+    ],
+    "affiliates": [
+      {
+        "kind": "stay",
+        "url": "",
+        "label": "Places to stay in Hikkaduwa"
+      }
+    ],
+    "image": "/places/hikkaduwa.jpg"
+  },
+  {
+    "id": "bentota",
+    "name": "Bentota",
+    "slug": "bentota",
+    "lat": 6.421,
+    "lng": 79.998,
+    "zone": "southwest",
+    "tags": [
+      "beach"
+    ],
+    "minNights": 2,
+    "maxNights": 3,
+    "weight": 0.45,
+    "blurb": "Long, golden beaches and river safaris an hour from Colombo, good for a relaxed final stretch.",
+    "highlights": [
+      "Madu Ganga river safari",
+      "Brief Garden (Bevis Bawa)",
+      "Lunuganga estate",
+      "Water sports on the lagoon"
+    ],
+    "affiliates": [
+      {
+        "kind": "stay",
+        "url": "",
+        "label": "Places to stay in Bentota"
+      }
+    ],
+    "image": "/places/bentota.jpg"
+  },
+  {
+    "id": "tangalle",
+    "name": "Tangalle",
+    "slug": "tangalle",
+    "lat": 6.0243,
+    "lng": 80.7941,
+    "zone": "southwest",
+    "tags": [
+      "beach"
+    ],
+    "minNights": 2,
+    "maxNights": 4,
+    "weight": 0.5,
+    "blurb": "Wild, uncrowded beaches and turtle-nesting coves at the quiet end of the south coast.",
+    "highlights": [
+      "Rekawa turtle watch at night",
+      "Mulkirigala rock temple",
+      "Hummanaya blowhole",
+      "Empty beaches at Goyambokka"
+    ],
+    "affiliates": [
+      {
+        "kind": "stay",
+        "url": "",
+        "label": "Places to stay in Tangalle"
+      }
+    ],
+    "image": "/places/tangalle.jpg"
+  },
+  {
+    "id": "arugam-bay",
+    "name": "Arugam Bay",
+    "slug": "arugam-bay",
+    "lat": 6.8406,
+    "lng": 81.8368,
+    "zone": "east",
+    "tags": [
+      "beach",
+      "surf"
+    ],
+    "minNights": 3,
+    "maxNights": 4,
+    "weight": 0.8,
+    "blurb": "A world-class right-hand point break and a sociable surf village, at its best from May to September.",
+    "highlights": [
+      "Surf Main Point or Whiskey Point",
+      "Kumana National Park safari",
+      "Elephant Rock at sunset",
+      "Muhudu Maha Viharaya"
+    ],
+    "affiliates": [
+      {
+        "kind": "stay",
+        "url": "",
+        "label": "Places to stay in Arugam Bay"
+      }
+    ],
+    "image": "/places/arugam-bay.jpg"
+  },
+  {
+    "id": "trincomalee",
+    "name": "Trincomalee",
+    "slug": "trincomalee",
+    "lat": 8.5874,
+    "lng": 81.2152,
+    "zone": "east",
+    "tags": [
+      "beach",
+      "heritage"
+    ],
+    "minNights": 3,
+    "maxNights": 4,
+    "weight": 0.78,
+    "blurb": "A deep natural harbour with calm east-coast beaches, Hindu temples and summer snorkelling at Pigeon Island.",
+    "highlights": [
+      "Koneswaram Temple on Swami Rock",
+      "Pigeon Island snorkelling",
+      "Uppuveli beach",
+      "Whale watching (March to August)"
+    ],
+    "affiliates": [
+      {
+        "kind": "stay",
+        "url": "",
+        "label": "Places to stay in Trincomalee"
+      },
+      {
+        "kind": "tour",
+        "url": "",
+        "label": "Guided tours"
+      }
+    ],
+    "image": "/places/trincomalee.jpg"
+  },
+  {
+    "id": "nilaveli",
+    "name": "Nilaveli",
+    "slug": "nilaveli",
+    "lat": 8.696,
+    "lng": 81.189,
+    "zone": "east",
+    "tags": [
+      "beach"
+    ],
+    "minNights": 2,
+    "maxNights": 3,
+    "weight": 0.45,
+    "blurb": "A long, quiet white-sand beach north of Trincomalee and the jumping-off point for Pigeon Island.",
+    "highlights": [
+      "Pigeon Island National Park",
+      "Kayaking the backwaters",
+      "Quiet beach days",
+      "Fresh seafood on the sand"
+    ],
+    "affiliates": [
+      {
+        "kind": "stay",
+        "url": "",
+        "label": "Places to stay in Nilaveli"
+      }
+    ],
+    "image": "/places/nilaveli.jpg"
+  },
+  {
+    "id": "pasikuda",
+    "name": "Pasikuda",
+    "slug": "pasikuda",
+    "lat": 7.926,
+    "lng": 81.561,
+    "zone": "east",
+    "tags": [
+      "beach"
+    ],
+    "minNights": 2,
+    "maxNights": 3,
+    "weight": 0.45,
+    "blurb": "A shallow, glassy lagoon you can wade out into for hundreds of metres, lined with resorts.",
+    "highlights": [
+      "Swim in the shallow bay",
+      "Kalkudah beach",
+      "Batticaloa day trip",
+      "Snorkelling off the reef"
+    ],
+    "affiliates": [
+      {
+        "kind": "stay",
+        "url": "",
+        "label": "Places to stay in Pasikuda"
+      }
+    ],
+    "image": "/places/pasikuda.jpg"
+  },
+  {
+    "id": "batticaloa",
+    "name": "Batticaloa",
+    "slug": "batticaloa",
+    "lat": 7.717,
+    "lng": 81.7,
+    "zone": "east",
+    "tags": [
+      "heritage",
+      "food",
+      "beach"
+    ],
+    "minNights": 1,
+    "maxNights": 2,
+    "weight": 0.3,
+    "blurb": "A lagoon town of Dutch forts and 'singing fish', little touched by mass tourism.",
+    "highlights": [
+      "Dutch Fort",
+      "Kallady bridge and the singing fish",
+      "Lagoon boat trip",
+      "Tamil food in the market"
+    ],
+    "affiliates": [
+      {
+        "kind": "stay",
+        "url": "",
+        "label": "Places to stay in Batticaloa"
+      },
+      {
+        "kind": "tour",
+        "url": "",
+        "label": "Guided tours"
+      }
+    ],
+    "image": "/places/batticaloa.jpg"
+  },
+  {
+    "id": "jaffna",
+    "name": "Jaffna",
+    "slug": "jaffna",
+    "lat": 9.6615,
+    "lng": 80.0255,
+    "zone": "north",
+    "tags": [
+      "heritage",
+      "food",
+      "city"
+    ],
+    "minNights": 2,
+    "maxNights": 3,
+    "weight": 0.55,
+    "blurb": "The Tamil cultural capital of the north, with its own cuisine, temples and island-hopping.",
+    "highlights": [
+      "Nallur Kandaswamy Kovil",
+      "Jaffna crab curry",
+      "Point Pedro and Casuarina Beach",
+      "Jaffna Fort"
+    ],
+    "affiliates": [
+      {
+        "kind": "stay",
+        "url": "",
+        "label": "Places to stay in Jaffna"
+      },
+      {
+        "kind": "tour",
+        "url": "",
+        "label": "Guided tours"
+      }
+    ],
+    "image": "/places/jaffna.jpg"
+  },
+  {
+    "id": "delft",
+    "name": "Delft Island",
+    "slug": "delft",
+    "lat": 9.5167,
+    "lng": 79.6833,
+    "zone": "north",
+    "tags": [
+      "heritage"
+    ],
+    "minNights": 1,
+    "maxNights": 1,
+    "weight": 0.25,
+    "blurb": "A remote coral island reached by ferry, with wild ponies, baobab trees and coral-stone walls.",
+    "highlights": [
+      "Wild Delft ponies",
+      "The baobab tree",
+      "Dutch fort ruins",
+      "Coral-stone village walls"
+    ],
+    "affiliates": [
+      {
+        "kind": "stay",
+        "url": "",
+        "label": "Places to stay in Delft Island"
+      },
+      {
+        "kind": "tour",
+        "url": "",
+        "label": "Guided tours"
+      }
+    ],
+    "image": "/places/delft.jpg"
+  },
+  {
+    "id": "wilpattu",
+    "name": "Wilpattu",
+    "slug": "wilpattu",
+    "lat": 8.43,
+    "lng": 80.05,
+    "zone": "northwest",
+    "tags": [
+      "wildlife"
+    ],
+    "minNights": 2,
+    "maxNights": 2,
+    "weight": 0.55,
+    "blurb": "The island's largest national park: lakes (villus), leopards and far fewer jeeps than Yala.",
+    "highlights": [
+      "Full-day safari around the villus",
+      "Leopard and sloth bear",
+      "Birdlife on the lakes",
+      "Pair with Anuradhapura"
+    ],
+    "affiliates": [
+      {
+        "kind": "stay",
+        "url": "",
+        "label": "Places to stay in Wilpattu"
+      },
+      {
+        "kind": "tour",
+        "url": "",
+        "label": "Tours & safaris"
+      }
+    ],
+    "image": "/places/wilpattu.jpg"
+  },
+  {
+    "id": "kalpitiya",
+    "name": "Kalpitiya",
+    "slug": "kalpitiya",
+    "lat": 8.2333,
+    "lng": 79.7667,
+    "zone": "northwest",
+    "tags": [
+      "beach",
+      "wildlife",
+      "surf"
+    ],
+    "minNights": 2,
+    "maxNights": 3,
+    "weight": 0.4,
+    "blurb": "A sandy peninsula for kitesurfing (May to October) and big dolphin pods (November to April).",
+    "highlights": [
+      "Spinner dolphin boat trip",
+      "Kitesurf lessons on the lagoon",
+      "Bar Reef snorkelling",
+      "Dutch fort"
+    ],
+    "affiliates": [
+      {
+        "kind": "stay",
+        "url": "",
+        "label": "Places to stay in Kalpitiya"
+      },
+      {
+        "kind": "tour",
+        "url": "",
+        "label": "Tours & safaris"
+      }
+    ],
+    "image": "/places/kalpitiya.jpg"
+  },
+  {
+    "id": "minneriya",
+    "name": "Minneriya",
+    "slug": "minneriya",
+    "lat": 8.036,
+    "lng": 80.9,
+    "zone": "cultural",
+    "tags": [
+      "wildlife"
+    ],
+    "minNights": 1,
+    "maxNights": 1,
+    "weight": 0.5,
+    "blurb": "A national park around an ancient reservoir, site of 'The Gathering' of hundreds of elephants from July to September.",
+    "highlights": [
+      "Afternoon jeep safari",
+      "The Gathering (July to September)",
+      "Kaudulla as an alternative",
+      "Easy from Sigiriya"
+    ],
+    "affiliates": [
+      {
+        "kind": "stay",
+        "url": "",
+        "label": "Places to stay in Minneriya"
+      },
+      {
+        "kind": "tour",
+        "url": "",
+        "label": "Tours & safaris"
+      }
+    ],
+    "image": "/places/minneriya.jpg"
+  },
+  {
+    "id": "sinharaja",
+    "name": "Sinharaja",
+    "slug": "sinharaja",
+    "lat": 6.4,
+    "lng": 80.47,
+    "zone": "southwest",
+    "tags": [
+      "wildlife",
+      "hill"
+    ],
+    "minNights": 1,
+    "maxNights": 2,
+    "weight": 0.4,
+    "blurb": "The last large lowland rainforest, a UNESCO site full of endemic birds, best with a local guide.",
+    "highlights": [
+      "Guided rainforest walk",
+      "Endemic bird flocks",
+      "Leech socks essential",
+      "Waterfalls and forest streams"
+    ],
+    "affiliates": [
+      {
+        "kind": "stay",
+        "url": "",
+        "label": "Places to stay in Sinharaja"
+      },
+      {
+        "kind": "tour",
+        "url": "",
+        "label": "Tours & safaris"
+      }
+    ],
+    "image": "/places/sinharaja.jpg"
+  },
+  {
+    "id": "adams-peak",
+    "name": "Adam's Peak",
+    "slug": "adams-peak",
+    "lat": 6.8096,
+    "lng": 80.4994,
+    "zone": "hill",
+    "tags": [
+      "buddhist",
+      "hill"
+    ],
+    "minNights": 1,
+    "maxNights": 1,
+    "weight": 0.45,
+    "blurb": "A 2,243 m sacred mountain climbed through the night by pilgrims of four faiths to see sunrise from the summit.",
+    "highlights": [
+      "Night climb for sunrise (December to May)",
+      "Sri Pada footprint shrine",
+      "The peak's triangular shadow at dawn",
+      "Base village of Dalhousie"
+    ],
+    "affiliates": [
+      {
+        "kind": "stay",
+        "url": "",
+        "label": "Places to stay in Adam's Peak"
+      }
+    ],
+    "image": "/places/adams-peak.jpg"
+  },
+  {
+    "id": "gal-oya",
+    "name": "Gal Oya",
+    "slug": "gal-oya",
+    "lat": 7.23,
+    "lng": 81.47,
+    "zone": "east",
+    "tags": [
+      "wildlife"
+    ],
+    "minNights": 2,
+    "maxNights": 2,
+    "weight": 0.3,
+    "blurb": "The only park in Sri Lanka where you can watch elephants swim between islands from a boat.",
+    "highlights": [
+      "Boat safari on Senanayake Samudra",
+      "Swimming elephants",
+      "Meet Vedda indigenous elders",
+      "Off-the-radar wilderness lodges"
+    ],
+    "affiliates": [
+      {
+        "kind": "stay",
+        "url": "",
+        "label": "Places to stay in Gal Oya"
+      },
+      {
+        "kind": "tour",
+        "url": "",
+        "label": "Tours & safaris"
+      }
+    ],
+    "image": "/places/gal-oya.jpg"
+  }
+]

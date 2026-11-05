@@ -1,0 +1,594 @@
+[
+ {
+  "from": "negombo",
+  "to": "colombo",
+  "minutes": 45,
+  "mode": "car"
+ },
+ {
+  "from": "negombo",
+  "to": "sigiriya",
+  "minutes": 210,
+  "mode": "car"
+ },
+ {
+  "from": "negombo",
+  "to": "kandy",
+  "minutes": 180,
+  "mode": "car"
+ },
+ {
+  "from": "negombo",
+  "to": "dambulla",
+  "minutes": 180,
+  "mode": "car"
+ },
+ {
+  "from": "negombo",
+  "to": "anuradhapura",
+  "minutes": 210,
+  "mode": "car"
+ },
+ {
+  "from": "negombo",
+  "to": "polonnaruwa",
+  "minutes": 270,
+  "mode": "car"
+ },
+ {
+  "from": "negombo",
+  "to": "kalpitiya",
+  "minutes": 150,
+  "mode": "car"
+ },
+ {
+  "from": "negombo",
+  "to": "wilpattu",
+  "minutes": 180,
+  "mode": "car"
+ },
+ {
+  "from": "negombo",
+  "to": "galle",
+  "minutes": 150,
+  "mode": "car"
+ },
+ {
+  "from": "negombo",
+  "to": "unawatuna",
+  "minutes": 160,
+  "mode": "car"
+ },
+ {
+  "from": "negombo",
+  "to": "hikkaduwa",
+  "minutes": 135,
+  "mode": "car"
+ },
+ {
+  "from": "negombo",
+  "to": "bentota",
+  "minutes": 120,
+  "mode": "car"
+ },
+ {
+  "from": "negombo",
+  "to": "mirissa",
+  "minutes": 180,
+  "mode": "car"
+ },
+ {
+  "from": "negombo",
+  "to": "weligama",
+  "minutes": 175,
+  "mode": "car"
+ },
+ {
+  "from": "negombo",
+  "to": "tangalle",
+  "minutes": 220,
+  "mode": "car"
+ },
+ {
+  "from": "negombo",
+  "to": "yala",
+  "minutes": 300,
+  "mode": "car"
+ },
+ {
+  "from": "negombo",
+  "to": "udawalawe",
+  "minutes": 240,
+  "mode": "car"
+ },
+ {
+  "from": "negombo",
+  "to": "ella",
+  "minutes": 330,
+  "mode": "car"
+ },
+ {
+  "from": "negombo",
+  "to": "nuwara-eliya",
+  "minutes": 270,
+  "mode": "car"
+ },
+ {
+  "from": "negombo",
+  "to": "trincomalee",
+  "minutes": 330,
+  "mode": "car"
+ },
+ {
+  "from": "negombo",
+  "to": "arugam-bay",
+  "minutes": 420,
+  "mode": "car"
+ },
+ {
+  "from": "negombo",
+  "to": "jaffna",
+  "minutes": 420,
+  "mode": "car"
+ },
+ {
+  "from": "negombo",
+  "to": "adams-peak",
+  "minutes": 240,
+  "mode": "car"
+ },
+ {
+  "from": "negombo",
+  "to": "sinharaja",
+  "minutes": 210,
+  "mode": "car"
+ },
+ {
+  "from": "colombo",
+  "to": "galle",
+  "minutes": 120,
+  "mode": "car"
+ },
+ {
+  "from": "colombo",
+  "to": "bentota",
+  "minutes": 90,
+  "mode": "train",
+  "affiliate": {
+   "kind": "train",
+   "url": ""
+  }
+ },
+ {
+  "from": "colombo",
+  "to": "kandy",
+  "minutes": 150,
+  "mode": "train",
+  "scenic": true,
+  "affiliate": {
+   "kind": "train",
+   "url": ""
+  }
+ },
+ {
+  "from": "colombo",
+  "to": "adams-peak",
+  "minutes": 240,
+  "mode": "car"
+ },
+ {
+  "from": "sigiriya",
+  "to": "dambulla",
+  "minutes": 30,
+  "mode": "car"
+ },
+ {
+  "from": "sigiriya",
+  "to": "polonnaruwa",
+  "minutes": 75,
+  "mode": "car"
+ },
+ {
+  "from": "sigiriya",
+  "to": "minneriya",
+  "minutes": 40,
+  "mode": "car"
+ },
+ {
+  "from": "sigiriya",
+  "to": "anuradhapura",
+  "minutes": 120,
+  "mode": "car"
+ },
+ {
+  "from": "sigiriya",
+  "to": "kandy",
+  "minutes": 150,
+  "mode": "car"
+ },
+ {
+  "from": "sigiriya",
+  "to": "trincomalee",
+  "minutes": 150,
+  "mode": "car"
+ },
+ {
+  "from": "sigiriya",
+  "to": "ella",
+  "minutes": 300,
+  "mode": "car"
+ },
+ {
+  "from": "sigiriya",
+  "to": "arugam-bay",
+  "minutes": 330,
+  "mode": "car"
+ },
+ {
+  "from": "sigiriya",
+  "to": "pasikuda",
+  "minutes": 150,
+  "mode": "car"
+ },
+ {
+  "from": "sigiriya",
+  "to": "nuwara-eliya",
+  "minutes": 240,
+  "mode": "car"
+ },
+ {
+  "from": "dambulla",
+  "to": "kandy",
+  "minutes": 120,
+  "mode": "car"
+ },
+ {
+  "from": "dambulla",
+  "to": "anuradhapura",
+  "minutes": 90,
+  "mode": "car"
+ },
+ {
+  "from": "dambulla",
+  "to": "polonnaruwa",
+  "minutes": 90,
+  "mode": "car"
+ },
+ {
+  "from": "polonnaruwa",
+  "to": "minneriya",
+  "minutes": 40,
+  "mode": "car"
+ },
+ {
+  "from": "polonnaruwa",
+  "to": "trincomalee",
+  "minutes": 150,
+  "mode": "car"
+ },
+ {
+  "from": "polonnaruwa",
+  "to": "pasikuda",
+  "minutes": 105,
+  "mode": "car"
+ },
+ {
+  "from": "polonnaruwa",
+  "to": "batticaloa",
+  "minutes": 120,
+  "mode": "car"
+ },
+ {
+  "from": "polonnaruwa",
+  "to": "anuradhapura",
+  "minutes": 135,
+  "mode": "car"
+ },
+ {
+  "from": "anuradhapura",
+  "to": "mihintale",
+  "minutes": 25,
+  "mode": "car"
+ },
+ {
+  "from": "anuradhapura",
+  "to": "jaffna",
+  "minutes": 180,
+  "mode": "train",
+  "affiliate": {
+   "kind": "train",
+   "url": ""
+  }
+ },
+ {
+  "from": "anuradhapura",
+  "to": "wilpattu",
+  "minutes": 60,
+  "mode": "car"
+ },
+ {
+  "from": "anuradhapura",
+  "to": "trincomalee",
+  "minutes": 150,
+  "mode": "car"
+ },
+ {
+  "from": "anuradhapura",
+  "to": "kalpitiya",
+  "minutes": 150,
+  "mode": "car"
+ },
+ {
+  "from": "jaffna",
+  "to": "delft",
+  "minutes": 150,
+  "mode": "car+boat"
+ },
+ {
+  "from": "jaffna",
+  "to": "trincomalee",
+  "minutes": 240,
+  "mode": "car"
+ },
+ {
+  "from": "kandy",
+  "to": "nuwara-eliya",
+  "minutes": 150,
+  "mode": "car"
+ },
+ {
+  "from": "kandy",
+  "to": "ella",
+  "minutes": 420,
+  "mode": "train",
+  "scenic": true,
+  "affiliate": {
+   "kind": "train",
+   "url": ""
+  }
+ },
+ {
+  "from": "kandy",
+  "to": "knuckles",
+  "minutes": 90,
+  "mode": "car"
+ },
+ {
+  "from": "kandy",
+  "to": "adams-peak",
+  "minutes": 180,
+  "mode": "car"
+ },
+ {
+  "from": "nuwara-eliya",
+  "to": "ella",
+  "minutes": 210,
+  "mode": "train",
+  "scenic": true,
+  "affiliate": {
+   "kind": "train",
+   "url": ""
+  }
+ },
+ {
+  "from": "nuwara-eliya",
+  "to": "horton-plains",
+  "minutes": 75,
+  "mode": "car"
+ },
+ {
+  "from": "nuwara-eliya",
+  "to": "haputale",
+  "minutes": 100,
+  "mode": "car"
+ },
+ {
+  "from": "nuwara-eliya",
+  "to": "adams-peak",
+  "minutes": 150,
+  "mode": "car"
+ },
+ {
+  "from": "ella",
+  "to": "haputale",
+  "minutes": 60,
+  "mode": "train",
+  "scenic": true,
+  "affiliate": {
+   "kind": "train",
+   "url": ""
+  }
+ },
+ {
+  "from": "ella",
+  "to": "yala",
+  "minutes": 150,
+  "mode": "car"
+ },
+ {
+  "from": "ella",
+  "to": "arugam-bay",
+  "minutes": 180,
+  "mode": "car"
+ },
+ {
+  "from": "ella",
+  "to": "udawalawe",
+  "minutes": 150,
+  "mode": "car"
+ },
+ {
+  "from": "ella",
+  "to": "mirissa",
+  "minutes": 240,
+  "mode": "car"
+ },
+ {
+  "from": "ella",
+  "to": "tangalle",
+  "minutes": 180,
+  "mode": "car"
+ },
+ {
+  "from": "ella",
+  "to": "horton-plains",
+  "minutes": 120,
+  "mode": "car"
+ },
+ {
+  "from": "ella",
+  "to": "gal-oya",
+  "minutes": 180,
+  "mode": "car"
+ },
+ {
+  "from": "haputale",
+  "to": "horton-plains",
+  "minutes": 60,
+  "mode": "car"
+ },
+ {
+  "from": "yala",
+  "to": "mirissa",
+  "minutes": 150,
+  "mode": "car"
+ },
+ {
+  "from": "yala",
+  "to": "tangalle",
+  "minutes": 90,
+  "mode": "car"
+ },
+ {
+  "from": "yala",
+  "to": "udawalawe",
+  "minutes": 90,
+  "mode": "car"
+ },
+ {
+  "from": "yala",
+  "to": "arugam-bay",
+  "minutes": 240,
+  "mode": "car"
+ },
+ {
+  "from": "udawalawe",
+  "to": "mirissa",
+  "minutes": 150,
+  "mode": "car"
+ },
+ {
+  "from": "udawalawe",
+  "to": "sinharaja",
+  "minutes": 150,
+  "mode": "car"
+ },
+ {
+  "from": "mirissa",
+  "to": "weligama",
+  "minutes": 15,
+  "mode": "car"
+ },
+ {
+  "from": "mirissa",
+  "to": "galle",
+  "minutes": 60,
+  "mode": "car"
+ },
+ {
+  "from": "mirissa",
+  "to": "unawatuna",
+  "minutes": 50,
+  "mode": "car"
+ },
+ {
+  "from": "mirissa",
+  "to": "tangalle",
+  "minutes": 60,
+  "mode": "car"
+ },
+ {
+  "from": "galle",
+  "to": "unawatuna",
+  "minutes": 15,
+  "mode": "car"
+ },
+ {
+  "from": "galle",
+  "to": "hikkaduwa",
+  "minutes": 30,
+  "mode": "car"
+ },
+ {
+  "from": "galle",
+  "to": "bentota",
+  "minutes": 75,
+  "mode": "car"
+ },
+ {
+  "from": "galle",
+  "to": "sinharaja",
+  "minutes": 150,
+  "mode": "car"
+ },
+ {
+  "from": "galle",
+  "to": "weligama",
+  "minutes": 45,
+  "mode": "car"
+ },
+ {
+  "from": "hikkaduwa",
+  "to": "bentota",
+  "minutes": 45,
+  "mode": "car"
+ },
+ {
+  "from": "arugam-bay",
+  "to": "trincomalee",
+  "minutes": 300,
+  "mode": "car"
+ },
+ {
+  "from": "arugam-bay",
+  "to": "batticaloa",
+  "minutes": 150,
+  "mode": "car"
+ },
+ {
+  "from": "arugam-bay",
+  "to": "pasikuda",
+  "minutes": 180,
+  "mode": "car"
+ },
+ {
+  "from": "arugam-bay",
+  "to": "gal-oya",
+  "minutes": 120,
+  "mode": "car"
+ },
+ {
+  "from": "trincomalee",
+  "to": "nilaveli",
+  "minutes": 30,
+  "mode": "car"
+ },
+ {
+  "from": "trincomalee",
+  "to": "pasikuda",
+  "minutes": 150,
+  "mode": "car"
+ },
+ {
+  "from": "pasikuda",
+  "to": "batticaloa",
+  "minutes": 45,
+  "mode": "car"
+ },
+ {
+  "from": "kalpitiya",
+  "to": "wilpattu",
+  "minutes": 90,
+  "mode": "car"
+ }
+]

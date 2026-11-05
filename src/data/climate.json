@@ -1,0 +1,116 @@
+[
+  {
+    "id": "southwest",
+    "name": "South & West Coast",
+    "polygon": [[79.8,7.45],[80.25,7.45],[80.4,7.15],[80.35,6.75],[80.6,6.6],[81.0,6.6],[81.25,6.75],[81.5,6.5],[81.5,6.25],[81.1,6.08],[80.6,5.88],[80.15,5.98],[79.95,6.4],[79.8,6.9]],
+    "months": {
+      "1": { "score": 3, "rainMm": 75, "note": "Peak season: calm seas, sunshine, whale watching off Mirissa" },
+      "2": { "score": 3, "rainMm": 70 },
+      "3": { "score": 3, "rainMm": 125 },
+      "4": { "score": 2, "rainMm": 245, "note": "Afternoon thunderstorms as the inter-monsoon arrives" },
+      "5": { "score": 0, "rainMm": 360, "note": "Southwest monsoon breaks: rough seas, red flags on most beaches" },
+      "6": { "score": 0, "rainMm": 200, "note": "Monsoon: heavy showers, swimming unsafe on most beaches" },
+      "7": { "score": 1, "rainMm": 125, "note": "Showery and windy; Galle and Unawatuna's sheltered bay are usable" },
+      "8": { "score": 1, "rainMm": 110 },
+      "9": { "score": 1, "rainMm": 225 },
+      "10": { "score": 1, "rainMm": 350, "note": "Inter-monsoon: the wettest month of the year in Colombo" },
+      "11": { "score": 2, "rainMm": 290, "note": "Drying out late in the month; seas calm by December" },
+      "12": { "score": 3, "rainMm": 160 }
+    }
+  },
+  {
+    "id": "hill",
+    "name": "Hill Country",
+    "polygon": [[80.4,7.15],[80.68,7.22],[80.72,7.55],[81.15,7.65],[81.25,6.75],[81.0,6.6],[80.6,6.6],[80.35,6.75]],
+    "months": {
+      "1": { "score": 3, "rainMm": 150, "note": "Cool clear mornings; Adam's Peak pilgrim season" },
+      "2": { "score": 3, "rainMm": 80 },
+      "3": { "score": 3, "rainMm": 100 },
+      "4": { "score": 2, "rainMm": 180 },
+      "5": { "score": 1, "rainMm": 175 },
+      "6": { "score": 1, "rainMm": 215, "note": "Misty and wet on the western slopes (Nuwara Eliya, Adam's Peak)" },
+      "7": { "score": 2, "rainMm": 180, "note": "Ella and Haputale on the eastern (Uva) side stay mostly dry" },
+      "8": { "score": 2, "rainMm": 160 },
+      "9": { "score": 1, "rainMm": 170 },
+      "10": { "score": 1, "rainMm": 260 },
+      "11": { "score": 1, "rainMm": 250 },
+      "12": { "score": 3, "rainMm": 210, "note": "Adam's Peak season opens on the December full moon" }
+    }
+  },
+  {
+    "id": "cultural",
+    "name": "Cultural Triangle",
+    "polygon": [[80.25,7.45],[80.4,7.15],[80.68,7.22],[80.72,7.55],[81.15,7.65],[81.2,8.2],[81.0,8.9],[80.3,8.9]],
+    "months": {
+      "1": { "score": 3, "rainMm": 95 },
+      "2": { "score": 3, "rainMm": 50 },
+      "3": { "score": 3, "rainMm": 75 },
+      "4": { "score": 2, "rainMm": 170, "note": "Hot, with afternoon storms" },
+      "5": { "score": 3, "rainMm": 70 },
+      "6": { "score": 3, "rainMm": 20, "note": "Dry and hot; Poson festival at Mihintale and Anuradhapura" },
+      "7": { "score": 3, "rainMm": 25 },
+      "8": { "score": 3, "rainMm": 35, "note": "The Gathering: elephants at Minneriya and Kaudulla" },
+      "9": { "score": 3, "rainMm": 70 },
+      "10": { "score": 1, "rainMm": 240, "note": "Inter-monsoon rains begin" },
+      "11": { "score": 1, "rainMm": 270 },
+      "12": { "score": 1, "rainMm": 225 }
+    }
+  },
+  {
+    "id": "east",
+    "name": "East Coast",
+    "polygon": [[81.0,8.9],[81.2,8.2],[81.15,7.65],[81.25,6.75],[81.5,6.5],[81.75,6.5],[81.9,6.9],[81.85,7.45],[81.6,7.98],[81.3,8.6],[81.0,9.0]],
+    "months": {
+      "1": { "score": 1, "rainMm": 170, "note": "Tail of the northeast monsoon" },
+      "2": { "score": 2, "rainMm": 75 },
+      "3": { "score": 2, "rainMm": 55 },
+      "4": { "score": 3, "rainMm": 55, "note": "Arugam Bay surf season begins" },
+      "5": { "score": 3, "rainMm": 60 },
+      "6": { "score": 3, "rainMm": 25 },
+      "7": { "score": 3, "rainMm": 45, "note": "Peak season: flat seas in Trincomalee, best surf at Arugam Bay" },
+      "8": { "score": 3, "rainMm": 90 },
+      "9": { "score": 3, "rainMm": 95 },
+      "10": { "score": 1, "rainMm": 210 },
+      "11": { "score": 0, "rainMm": 360, "note": "Northeast monsoon: heavy rain, rough seas, many places close" },
+      "12": { "score": 0, "rainMm": 380 }
+    }
+  },
+  {
+    "id": "north",
+    "name": "Jaffna & the North",
+    "polygon": [[79.85,8.9],[81.0,8.9],[81.0,9.0],[80.6,9.5],[80.3,9.9],[79.85,9.85],[79.6,9.6],[79.6,9.4],[79.9,9.2]],
+    "months": {
+      "1": { "score": 2, "rainMm": 75 },
+      "2": { "score": 3, "rainMm": 25 },
+      "3": { "score": 3, "rainMm": 25 },
+      "4": { "score": 3, "rainMm": 50 },
+      "5": { "score": 3, "rainMm": 50 },
+      "6": { "score": 3, "rainMm": 15 },
+      "7": { "score": 3, "rainMm": 25, "note": "Nallur festival season (late July to August)" },
+      "8": { "score": 3, "rainMm": 50 },
+      "9": { "score": 3, "rainMm": 70 },
+      "10": { "score": 1, "rainMm": 230 },
+      "11": { "score": 0, "rainMm": 400, "note": "Northeast monsoon at full strength" },
+      "12": { "score": 1, "rainMm": 290 }
+    }
+  },
+  {
+    "id": "northwest",
+    "name": "Northwest Coast",
+    "polygon": [[79.75,7.45],[80.25,7.45],[80.3,8.9],[79.85,8.9],[79.8,8.4],[79.65,8.0]],
+    "months": {
+      "1": { "score": 3, "rainMm": 60, "note": "Dolphin season off Kalpitiya" },
+      "2": { "score": 3, "rainMm": 40 },
+      "3": { "score": 3, "rainMm": 70 },
+      "4": { "score": 2, "rainMm": 150 },
+      "5": { "score": 2, "rainMm": 80, "note": "Kitesurf season begins in Kalpitiya" },
+      "6": { "score": 2, "rainMm": 30 },
+      "7": { "score": 2, "rainMm": 25 },
+      "8": { "score": 2, "rainMm": 30 },
+      "9": { "score": 2, "rainMm": 70 },
+      "10": { "score": 1, "rainMm": 245 },
+      "11": { "score": 1, "rainMm": 250 },
+      "12": { "score": 2, "rainMm": 150 }
+    }
+  }
+]
