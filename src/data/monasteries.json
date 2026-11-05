@@ -1,0 +1,213 @@
+[
+  {
+    "id": "ritigala",
+    "name": "Ritigala Forest Monastery",
+    "slug": "ritigala",
+    "lat": 8.11699,
+    "lng": 80.66599,
+    "nearPlace": "sigiriya",
+    "kind": "ancient",
+    "acceptsForeigners": true,
+    "stayPossible": false,
+    "etiquette": [
+      "Wear modest clothing covering shoulders and knees",
+      "Remove shoes and hats at shrines and stupas",
+      "Keep your voice down at this sacred site",
+      "Expect dense forest and leeches in the wet season",
+      "Note the surrounding Strict Nature Reserve is not covered by the site ticket"
+    ],
+    "blurb": "Ruins of a forest monastery for meditating monks on the slopes of Ritigala, off the Habarana-Anuradhapura (A11) road. It is one of four components of 'Buddhist Meditation Monasteries of Ancient Sri Lanka', a serial property Sri Lanka submitted to UNESCO's Tentative List on 4 June 2024, covering sites of the 5th-10th centuries AD.",
+    "source": "https://whc.unesco.org/en/tentativelists/6774/"
+  },
+  {
+    "id": "manakanda",
+    "name": "Manakanda Forest Monastery",
+    "slug": "manakanda",
+    "lat": 8.12095,
+    "lng": 80.54062,
+    "nearPlace": "anuradhapura",
+    "kind": "ancient",
+    "acceptsForeigners": true,
+    "stayPossible": false,
+    "etiquette": [
+      "Wear modest clothing covering shoulders and knees",
+      "Remove shoes and hats at shrines and stupas",
+      "Keep your voice down at this sacred site",
+      "Bring water: this is a remote site with few facilities"
+    ],
+    "blurb": "Remote hilltop forest-monastery ruins off Maradankadawala, similar in layout to nearby Ritigala. Since 4 June 2024 it has been on UNESCO's Tentative List as one of the four components of 'Buddhist Meditation Monasteries of Ancient Sri Lanka'.",
+    "source": "https://whc.unesco.org/en/tentativelists/6774/"
+  },
+  {
+    "id": "arankele",
+    "name": "Arankele Forest Monastery",
+    "slug": "arankele",
+    "lat": 7.64377,
+    "lng": 80.41709,
+    "nearPlace": "dambulla",
+    "kind": "ancient",
+    "acceptsForeigners": true,
+    "stayPossible": false,
+    "etiquette": [
+      "Wear modest clothing covering shoulders and knees",
+      "Remove shoes and hats at shrines and stupas",
+      "Keep your voice down at this sacred site",
+      "Keep silent: monks still meditate in the hermitage here"
+    ],
+    "blurb": "Forest monastery ruins about 24 km north of Kurunegala, with stone-faced double-platform meditation buildings and a walking path for forest-dwelling monks. A meditation hermitage still functions on the site. Since 4 June 2024 it has been on UNESCO's Tentative List as part of 'Buddhist Meditation Monasteries of Ancient Sri Lanka'.",
+    "source": "https://whc.unesco.org/en/tentativelists/6774/"
+  },
+  {
+    "id": "maligatenna",
+    "name": "Maligatenna (Rawa Ela) Forest Monastery",
+    "slug": "maligatenna",
+    "lat": 7.76188,
+    "lng": 80.42433,
+    "nearPlace": "dambulla",
+    "kind": "ancient",
+    "acceptsForeigners": true,
+    "stayPossible": false,
+    "etiquette": [
+      "Wear modest clothing covering shoulders and knees",
+      "Remove shoes and hats at shrines and stupas",
+      "Keep your voice down at this sacred site",
+      "Bring water: this is a remote jungle site with few facilities"
+    ],
+    "blurb": "Jungle ruins of a forest monastic complex near Rawa Ela village in Polpitigama, with a double-platform meditation building (padhanaghara). It is the fourth component of the 'Buddhist Meditation Monasteries of Ancient Sri Lanka' UNESCO tentative listing (2024). Don't confuse it with Maligatenna Raja Maha Vihara in Gampaha District.",
+    "source": "https://whc.unesco.org/en/tentativelists/6774/"
+  },
+  {
+    "id": "mihintale",
+    "name": "Mihintale",
+    "slug": "mihintale",
+    "lat": 8.35339,
+    "lng": 80.51585,
+    "nearPlace": "mihintale",
+    "kind": "ancient",
+    "acceptsForeigners": true,
+    "stayPossible": false,
+    "etiquette": [
+      "Wear modest clothing covering shoulders and knees",
+      "Remove shoes and hats before entering the sacred areas",
+      "Keep your voice down at religious sites"
+    ],
+    "blurb": "A mountain peak about 13 km east of Anuradhapura, where Sri Lankans believe the monk Mahinda met King Devanampiyatissa, the meeting that brought Buddhism to the island. Stairways climb past monastery ruins and stupas to the summit.",
+    "source": "https://en.wikipedia.org/wiki/Mihintale"
+  },
+  {
+    "id": "dambulla-cave-temple",
+    "name": "Dambulla Cave Temple",
+    "slug": "dambulla-cave-temple",
+    "lat": 7.85667,
+    "lng": 80.64917,
+    "nearPlace": "dambulla",
+    "kind": "temple",
+    "acceptsForeigners": true,
+    "stayPossible": false,
+    "etiquette": [
+      "Cover shoulders and knees: shorts, mini-skirts and sleeveless tops are not allowed",
+      "Remove shoes and hats before entering the caves",
+      "Carry a scarf or shawl for extra cover"
+    ],
+    "blurb": "Rock-cut cave temples above Dambulla, filled with Buddha statues and painted ceilings. It became a UNESCO World Heritage Site in 1991.",
+    "source": "https://en.wikipedia.org/wiki/Dambulla_cave_temple"
+  },
+  {
+    "id": "temple-of-the-tooth",
+    "name": "Temple of the Sacred Tooth Relic (Sri Dalada Maligawa)",
+    "slug": "temple-of-the-tooth",
+    "lat": 7.29389,
+    "lng": 80.63861,
+    "nearPlace": "kandy",
+    "kind": "temple",
+    "acceptsForeigners": true,
+    "stayPossible": false,
+    "etiquette": [
+      "Cover shoulders and knees: shorts and sleeveless tops are not allowed (sarongs can be rented)",
+      "Remove shoes before entering the temple grounds",
+      "Expect an extra charge for cameras and video inside"
+    ],
+    "blurb": "Kandy's most sacred temple houses the Buddha's tooth relic, inside the royal palace complex of the former Kandyan kingdom beside Kandy Lake. Guides list opening hours of 5:30am-8pm daily, but check before you go.",
+    "source": "https://en.wikipedia.org/wiki/Temple_of_the_Tooth"
+  },
+  {
+    "id": "nilambe",
+    "name": "Nilambe Buddhist Meditation Centre",
+    "slug": "nilambe",
+    "lat": 7.2,
+    "lng": 80.667,
+    "nearPlace": "kandy",
+    "kind": "lay-retreat",
+    "acceptsForeigners": true,
+    "stayPossible": true,
+    "etiquette": [
+      "Book ahead: places are limited and it gets full around poya days",
+      "Keep talking to a minimum and follow the daily schedule",
+      "Photography is not allowed",
+      "Wear modest, comfortable clothing for sitting meditation"
+    ],
+    "contact": "Retreat dates and how to apply are on nilambe.net. Bookings are also handled through the Buddhist Cultural Centre, Dehiwala.",
+    "blurb": "A hill-country lay meditation centre about 20 km south of Kandy, off the Kandy-Galaha road, built up by teacher Godwin Samararatne. It runs short retreats, mostly 5 days, on set dates, and charges foreigners a small daily fee for food and lodging. The map pin marks nearby Galaha town: the centre's exact coordinates could not be verified, and the last stretch is often walked uphill.",
+    "source": "https://tourism.cp.gov.lk/en/destination/kandy-district/nillambe-international-buddhist-meditation-centre"
+  },
+  {
+    "id": "na-uyana-aranya",
+    "name": "Na Uyana Aranya",
+    "slug": "na-uyana-aranya",
+    "lat": 7.73785,
+    "lng": 80.51658,
+    "nearPlace": "dambulla",
+    "kind": "forest-hermitage",
+    "acceptsForeigners": true,
+    "stayPossible": true,
+    "tradition": "Pa-Auk lineage (Sri Kalyani Yogasrama Samstha)",
+    "etiquette": [
+      "Wear modest clothing",
+      "Do not wear footwear in the presence of monks",
+      "Never sit on the same seat or mat as a monk",
+      "Lay residents help with simple monastery duties"
+    ],
+    "contact": "Email the monastery (nauyana@gmail.com, per nauyana.org) with an application form and a copy of your passport. Stays over three months need a visa, which the monastery supports with a sponsorship letter.",
+    "blurb": "Forest monastery at Pansiyagama, Melsiripura, in the Dummiya range of Kurunegala District, teaching Pa-Auk samatha-vipassana meditation and home to a community of foreign monks. Long stays must be approved by email in advance. The detailed application steps found were for the affiliated nunnery, so confirm the terms for lay men.",
+    "source": "https://en.wikipedia.org/wiki/Na_Uyana_Aranya"
+  },
+  {
+    "id": "nissarana-vanaya",
+    "name": "Nissarana Vanaya (Mitirigala Forest Hermitage)",
+    "slug": "nissarana-vanaya",
+    "lat": 7.033,
+    "lng": 80.133,
+    "nearPlace": "colombo",
+    "kind": "forest-hermitage",
+    "acceptsForeigners": true,
+    "stayPossible": true,
+    "tradition": "Galduwa (Sri Kalyani Yogasrama Samstha)",
+    "etiquette": [
+      "Stay only with written prior permission: no drop-in visits",
+      "Keep silence: the hermitage follows a strict forest discipline",
+      "Wear modest clothing",
+      "Women may stay only at the Retreat Centre during retreats"
+    ],
+    "contact": "Write well in advance to Most Ven. Uda Eriyagama Dhammajiva Maha Thero, following the 'Staying at the Monastery' page on nissarana.lk.",
+    "blurb": "Also called the Mitirigala Forest Hermitage, this strict forest monastery near Kirindiwela was founded in 1967 by Asoka Weeraratna. Matara Sri Nanarama was its first meditation master. With prior permission men may stay up to two weeks, and a separate Retreat Centre runs retreats in Sinhala and English for men and women. The map pin marks nearby Kirindiwela town: the hermitage's exact coordinates could not be verified.",
+    "source": "https://www.nissarana.lk/meditate-with-us/staying-overnight-at-the-monastery/"
+  },
+  {
+    "id": "pilikuththuwa",
+    "name": "Pilikuththuwa Raja Maha Vihara",
+    "slug": "pilikuththuwa",
+    "lat": 7.063944,
+    "lng": 80.050306,
+    "nearPlace": "colombo",
+    "kind": "ancient",
+    "acceptsForeigners": true,
+    "stayPossible": false,
+    "etiquette": [
+      "Wear modest clothing covering shoulders and knees",
+      "Remove shoes and hats at shrines and image houses",
+      "Keep your voice down: this is an active temple"
+    ],
+    "blurb": "An ancient forest monastery in Gampaha District, with dozens of drip-ledged rock caves (sources count 78 to 99) set in forest about 1.6 km from Maligatenna Raja Maha Vihara. It is one of the closest ancient forest-monastery sites to Colombo and the airport.",
+    "source": "https://en.wikipedia.org/wiki/Pilikuththuwa_Raja_Maha_Vihara"
+  }
+]
